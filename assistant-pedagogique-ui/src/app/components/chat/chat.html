@@ -1,0 +1,241 @@
+<div class="flex h-screen bg-slate-50 font-sans">
+
+  <!-- SIDEBAR -->
+  <div class="w-64 bg-[#042C53] text-blue-100 flex flex-col relative overflow-hidden z-20">
+    <div class="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-blue-500/10 pointer-events-none"></div>
+
+    <div class="p-6 relative">
+      <h2 class="text-xl font-medium tracking-tight text-white leading-tight">
+        Assistant <br><span class="text-blue-300">pédagogique</span>
+      </h2>
+    </div>
+
+    <div class="px-4 space-y-2 relative">
+      <button (click)="createNewSession()"
+              class="w-full flex items-center justify-center gap-2 bg-[#185FA5] hover:bg-[#0C447C] text-white font-medium py-3 px-4 rounded-xl transition-colors">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+        Nouvelle discussion
+      </button>
+
+      <a *ngIf="isEnseignant" routerLink="/dashboard"
+         class="w-full flex items-center justify-center gap-2 bg-white/[0.08] hover:bg-white/[0.14] text-blue-200 font-medium py-2.5 px-4 rounded-xl transition-colors">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+        Tableau de bord
+      </a>
+    </div>
+
+    <div class="flex-1 overflow-y-auto p-3 space-y-1 mt-4 relative">
+      <h3 class="text-xs font-medium text-blue-400/70 uppercase tracking-wider mb-3 px-2">Conversations</h3>
+
+      <div *ngIf="isLoading" class="text-center text-blue-300 text-sm py-4">Chargement...</div>
+
+      <div *ngFor="let session of sessions"
+           (click)="selectSession(session)"
+           [class.bg-white/10]="activeSession?.id === session.id"
+           [class.border-l-4]="activeSession?.id === session.id"
+           [class.border-amber-300]="activeSession?.id === session.id"
+           class="p-3 rounded-lg cursor-pointer hover:bg-white/10 transition-all">
+        <div class="text-sm text-white truncate font-medium">
+          {{ session.nomSession || 'Nouvelle session...' }}
+        </div>
+        <div class="text-xs text-blue-300/70 mt-1" *ngIf="session.heureDebut">
+          {{ session.heureDebut | date:'dd MMM yyyy à HH:mm' }}
+        </div>
+      </div>
+
+      <div *ngIf="!isLoading && sessions.length === 0" class="text-center text-blue-300/70 text-sm py-8 px-2 leading-relaxed">
+        Aucune discussion<br>Cliquez sur « Nouvelle discussion » pour commencer.
+      </div>
+    </div>
+
+    <!-- Pied avec profil -->
+    <div class="p-3 border-t border-white/10 relative">
+      <div class="flex items-center gap-3 px-2 py-2 mb-1.5 cursor-pointer hover:bg-white/10 rounded-xl transition"
+           (click)="openProfileModal()">
+        <div class="w-10 h-10 rounded-full bg-amber-300 flex items-center justify-center text-amber-900 font-medium">
+          {{ (userName || '?').charAt(0).toUpperCase() }}
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="text-sm font-medium text-white truncate">{{ userName }}</span>
+          <span class="text-xs text-blue-400/70 uppercase">{{ isEnseignant ? 'Enseignant' : 'Étudiant' }}</span>
+        </div>
+      </div>
+
+      <button (click)="logout()"
+              class="w-full flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-rose-300 hover:bg-rose-500/10 hover:text-rose-200 rounded-lg transition-colors">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"/></svg>
+        Déconnexion
+      </button>
+    </div>
+  </div>
+
+  <!-- ZONE DE CHAT -->
+  <div class="flex-1 flex flex-col overflow-hidden relative">
+
+    <header class="bg-white border-b border-slate-200 px-8 py-4 flex justify-between items-center z-10">
+      <div>
+        <h1 class="text-xl font-medium text-slate-800">{{ activeSession?.nomSession || 'Nova' }}</h1>
+        <p class="text-sm text-slate-500">Posez vos questions sur les cours</p>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div class="text-right">
+          <p class="text-xs text-slate-400">Assistant pédagogique IA</p>
+          <h2 class="text-lg font-medium text-[#042C53]">Nova</h2>
+        </div>
+        <div class="w-11 h-11 rounded-xl bg-[#042C53] flex items-center justify-center overflow-hidden">
+          <img src="icon.jpg" alt="Nova" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </header>
+
+    <div class="flex-1 overflow-y-auto p-6 space-y-6 pb-32">
+
+      <!-- État vide -->
+      <div *ngIf="interactions.length === 0 && !isTyping" class="h-full flex flex-col items-center justify-center text-center">
+        <div class="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center mb-5">
+          <svg class="w-8 h-8 text-[#185FA5]" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"/></svg>
+        </div>
+        <h3 class="text-xl font-medium text-slate-800">Comment puis-je vous aider ?</h3>
+        <p class="text-slate-500 mt-2">Posez votre première question sur votre cours.</p>
+      </div>
+
+      <!-- ✅ ngFor contient UNIQUEMENT les interactions (question + réponse) -->
+      <div *ngFor="let inter of interactions" class="space-y-6 max-w-4xl mx-auto w-full">
+
+        <!-- Question utilisateur -->
+        <div class="flex justify-end">
+          <div class="flex flex-col items-end max-w-[80%]">
+            <div class="bg-[#042C53] text-white px-5 py-3.5 rounded-3xl rounded-tr-md leading-relaxed">
+              {{ inter.question }}
+            </div>
+            <span class="text-xs text-slate-400 mt-1 mr-2">{{ inter.timestamp | date:'HH:mm' }}</span>
+          </div>
+        </div>
+
+        <!-- Réponse IA -->
+        <div *ngIf="inter.reponse" class="flex justify-start">
+          <div class="flex flex-col items-start max-w-[80%]">
+            <div class="bg-white border border-slate-200 text-slate-800 px-5 py-4 rounded-3xl rounded-tl-md leading-relaxed whitespace-pre-wrap">
+
+              <div class="flex flex-wrap gap-2 mb-3">
+
+                <!-- Chapitre -->
+                <div *ngIf="inter.chapitre"
+                     class="inline-flex items-center gap-1.5 bg-indigo-50 text-indigo-700 text-xs font-medium px-3 py-1.5 rounded-full">
+                  Chapitre : {{ inter.chapitre }}
+                </div>
+
+                <!-- Section -->
+                <div *ngIf="inter.section"
+                     class="inline-flex items-center gap-1.5 bg-blue-50 text-[#042C53] text-xs font-medium px-3 py-1.5 rounded-full">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"/>
+                  </svg>
+                  Section : {{ inter.section }}
+                </div>
+
+                <!-- Catégorie -->
+                <div *ngIf="inter.categorie"
+                     class="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-xs font-medium px-3 py-1.5 rounded-full">
+                  Catégorie : {{ inter.categorie }}
+                </div>
+
+                <!-- Slide -->
+                <div *ngIf="inter.slideId"
+                     class="inline-flex items-center gap-1.5 bg-slate-100 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full">
+                  Slide : {{ inter.slideId }}
+                </div>
+
+              </div>
+
+              <div class="text-slate-800">
+                {{ inter.reponse }}
+              </div>
+
+            </div>
+            <span class="text-xs text-slate-400 mt-1 ml-2">{{ inter.timestamp | date:'HH:mm' }}</span>
+          </div>
+        </div>
+
+      </div>
+      <!-- ✅ FIN du ngFor — typing indicator est EN DEHORS -->
+
+      <!-- Indicateur de saisie — affiché UNE SEULE FOIS -->
+      <div *ngIf="isTyping" class="flex justify-start max-w-4xl mx-auto w-full">
+        <div class="bg-white border border-slate-200 px-5 py-4 rounded-3xl rounded-tl-md flex gap-1.5 items-center">
+          <div class="w-2 h-2 bg-[#185FA5] rounded-full animate-bounce"></div>
+          <div class="w-2 h-2 bg-[#185FA5] rounded-full animate-bounce" style="animation-delay: 0.15s"></div>
+          <div class="w-2 h-2 bg-[#185FA5] rounded-full animate-bounce" style="animation-delay: 0.3s"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Champ de saisie -->
+    <div class="absolute bottom-0 w-full bg-gradient-to-t from-slate-50 via-slate-50 to-transparent pt-10 pb-6 px-4 md:px-8">
+      <div class="max-w-4xl mx-auto relative">
+        <input [(ngModel)]="newMessage" (keyup.enter)="sendMessage()" [disabled]="!activeSession"
+               type="text" placeholder="Posez votre question à l'assistant..."
+               class="w-full pl-5 pr-14 py-3.5 bg-white border border-slate-300 rounded-2xl shadow-sm focus:ring-2 focus:ring-[#042C53]/20 focus:border-[#042C53] outline-none transition-all disabled:bg-slate-100 disabled:cursor-not-allowed">
+        <button (click)="sendMessage()" [disabled]="!newMessage.trim() || !activeSession || isTyping"
+                class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-[#042C53] hover:bg-[#0C447C] disabled:bg-slate-300 text-white rounded-xl transition-all">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal profil -->
+<div *ngIf="showProfileModal" class="fixed inset-0 bg-slate-900/50 flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl p-6 w-full max-w-md shadow-xl">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-xl font-medium text-slate-800">Modifier le profil</h2>
+      <button (click)="closeProfileModal()" class="text-slate-400 hover:text-slate-600 transition-colors">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-slate-600 mb-1.5">Nom d'utilisateur</label>
+        <input [(ngModel)]="editName" type="text"
+               class="w-full border border-slate-200 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-[#042C53]/20 focus:border-[#042C53] outline-none transition">
+      </div>
+
+      <!-- Nouveau mot de passe avec œil -->
+      <div>
+        <label class="block text-sm font-medium text-slate-600 mb-1.5">Nouveau mot de passe</label>
+        <div class="relative">
+          <input [(ngModel)]="newPassword" [type]="showNewPassword ? 'text' : 'password'"
+                 class="w-full border border-slate-200 rounded-xl px-4 pr-11 py-2.5 focus:ring-2 focus:ring-[#042C53]/20 focus:border-[#042C53] outline-none transition">
+          <button type="button" (click)="showNewPassword = !showNewPassword"
+                  class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#042C53] transition-colors">
+            <svg *ngIf="showNewPassword" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <svg *ngIf="!showNewPassword" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Confirmer mot de passe avec œil -->
+      <div>
+        <label class="block text-sm font-medium text-slate-600 mb-1.5">Confirmer le mot de passe</label>
+        <div class="relative">
+          <input [(ngModel)]="confirmPassword" [type]="showConfirmPassword ? 'text' : 'password'"
+                 class="w-full border border-slate-200 rounded-xl px-4 pr-11 py-2.5 focus:ring-2 focus:ring-[#042C53]/20 focus:border-[#042C53] outline-none transition">
+          <button type="button" (click)="showConfirmPassword = !showConfirmPassword"
+                  class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#042C53] transition-colors">
+            <svg *ngIf="showConfirmPassword" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <svg *ngIf="!showConfirmPassword" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-end gap-3 mt-6">
+      <button (click)="closeProfileModal()" class="px-4 py-2.5 rounded-xl border border-slate-200 text-slate-600 font-medium hover:bg-slate-50 transition">Annuler</button>
+      <button (click)="saveProfile()" class="px-5 py-2.5 rounded-xl bg-[#042C53] hover:bg-[#0C447C] text-white font-medium transition">Sauvegarder</button>
+    </div>
+  </div>
+</div>
