@@ -1,7 +1,7 @@
 
 # Assistant Pédagogique - Projet Complet
 
-> Plateforme d'assistant pédagogique intelligent pour le module Traitement du Signal - Solution fullstack avec backend Spring Boot et frontend Angular.
+> Plateforme d'assistant pédagogique intelligent pour le module Traitement du Signal - Solution fullstack avec backend Spring Boot et frontend Angular et Python FASTAPI pour l'assistant.
 
 [![Java](https://img.shields.io/badge/Java-17-blue.svg)](https://openjdk.org/projects/jdk/17/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.0.5-green.svg)](https://spring.io/projects/spring-boot)
