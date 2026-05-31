@@ -160,7 +160,7 @@ Le frontend est accessible sur : `http://localhost:4200`
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                         UTILISATEUR                              │
+│                   UTILISATEUR (Etudiant-Enseignant)             │
 └─────────────────────────────────────────────────────────────────┘
                                   │
                                   ▼
