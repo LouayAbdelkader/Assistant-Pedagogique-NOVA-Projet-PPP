@@ -1,0 +1,527 @@
+[
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 2,
+    "section": "Les différentes classes de signaux",
+    "slide_content": "Différents critères de classification :\nNombre de variables ;\nSignaux réels / complexes ;\nDéterministes / aléatoires ;\nContinus / discrets ;\nClassification énergétique."
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 3,
+    "section": "Classification en fonction du nombre de variables",
+    "slide_content": ""
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 4,
+    "section": "Signaux réels / complexes",
+    "slide_content": "signal réel  :    si   [EQ: 𝑥(𝑡)∈ℝ]\nsignal complexe : si   [EQ: 𝑥(𝑡)∈ℂ]\nNotations usuelles:\nNombre complexe  [EQ: 𝑗: 𝑗^2=−1]\nSi [EQ: 𝑥(𝑡)=𝑎(𝑡)+𝑗 𝑏(𝑡)]  :\npartie réelle : [EQ: 𝑅𝑒(𝑥(𝑡))=𝑎(𝑡)]\npartie imaginaire:  [EQ: 𝐼𝑚(𝑥(𝑡))=𝑏(𝑡)]\nmodule: [EQ: (𝑥(𝑡))=√(𝑎2𝑡+𝑏2𝑡)]\nargument: [EQ: 𝐴𝑟𝑔(𝑥(𝑡))=𝑎𝑟𝑐𝑡𝑎𝑛((𝑏(𝑡)/𝑎(𝑡)))]\n[EQ: 𝑥(𝑡)=(𝑥(𝑡))𝑒^𝑗𝐴𝑟𝑔𝑥𝑡]\nComplexe conjugué:   [EQ: 𝑥^∗(𝑡)=𝑎(𝑡)−𝑗 𝑏(𝑡)=(𝑥(𝑡))𝑒^−𝑗𝐴𝑟𝑔𝑥𝑡]"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 5,
+    "section": "Signaux déterministes / aléatoires",
+    "slide_content": "Signaux déterministes (ou signaux certains): on connaît la valeur du signal quelque soit l’instant t .\nLeur évolution en fonction du temps peut être parfaitement modélisée par une fonction mathématique appropriée.\nOn retrouve dans cette classe les signaux périodiques, les signaux non périodiques et les signaux transitoires:\napériodiques \t           périodiques                transitoires"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 6,
+    "section": "Signaux déterministes / aléatoires",
+    "slide_content": "Signaux aléatoires : l’évolution est imprévisible et non reproductible d’une expérience à l’autre.\nExemple : le bruit\nIl faut faire appel à leurs propriétés statistiques pour les décrire (moyenne, variance, loi de probabilité,…).\nSi leurs propriétés statistiques sont invariantes dans le temps, on dit qu’ils sont  stationnaires."
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 7,
+    "section": "Signaux déterministes / aléatoires",
+    "slide_content": "On a souvent:\nsignal réel  = signal déterministe  +  signal aléatoire ( bruit)"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 8,
+    "section": "Signaux continus / discrets",
+    "slide_content": "Il existe deux types de signaux temporels :\nSignaux à variable continue : [EQ: 𝑥(𝑡)   𝑎𝑣𝑒𝑐   𝑡 ∈ℝ]\nsignal connu à chaque instant t\nExemple : onde électromagnétique, signal électrique, ...\nTraitement analogique du signal\nSignaux à variable discrète:   [EQ: 𝑥_𝑛   𝑎𝑣𝑒𝑐    𝑛 ∈ℤ]\nsignal connu uniquement à certains instants tn\nExemple : cours de la bourse enregistré chaque heure, signal\nprovenant d’un signal analogique que l’on a échantillonné\nTraitement numérique du signal"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 9,
+    "section": "Signaux continus / discrets",
+    "slide_content": "Il existe deux types de signaux temporels :"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 10,
+    "section": "Signaux continus / discrets",
+    "slide_content": ""
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 11,
+    "section": "Signaux continus / discrets",
+    "slide_content": ""
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 12,
+    "section": "Signaux continus / discrets",
+    "slide_content": ""
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 13,
+    "section": "Signaux continus / discrets",
+    "slide_content": "Support temporel: On appelle support temporel, l’ensemble des temps [EQ: 𝑡] (ou des échantillons [EQ: 𝑛] si le signal est discret) pour lesquels le signal [EQ: 𝑥(𝑡) ](resp. [EQ: 𝑥_𝑛 ]) est défini et non nul.\nCas continu. Si cet ensemble correspond à un intervalle ayant des limites hautes et basses, on dit que le support temporel est borné. Sinon, on dit qu’il est non borné.\nCas discret. Si cet ensemble contient un nombre fini de valeurs, on dit que le support temporel est fini. Sinon, on dit qu’il est infini.\nRemarque : Dans la pratique, tous les signaux physiques observés sont à support fini ou à support borné."
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 14,
+    "section": "Classification énergétique",
+    "slide_content": "Puissance instantanée:  Etant donné un signal continu x(t), on appelle puissance instantanée la quantité |x(t)|2"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 15,
+    "section": "Classification énergétique",
+    "slide_content": "Energie totale: L’énergie totale Ex correspond à la somme de la puissance instantanée sur ℝ."
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 16,
+    "section": "Classification énergétique",
+    "slide_content": "Puissance moyenne: La puissance moyenne (totale) Px correspond à la valeur moyenne de la puissance instantanée sur ℝ.\nSi le signal est à support temporel borné, sa puissance moyenne totale est donc nulle."
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 17,
+    "section": "Classification énergétique",
+    "slide_content": "Si Ex < +∞, on dit que le signal est à énergie finie.\nEn pratique, c’est le cas de tous les signaux physiquement réalisables.\nUn signal à énergie finie a une puissance moyenne totale nulle.\nSi Px < + ∞, on dit que le signal est à puissance finie.\nBien que ces signaux n’existent pas dans le monde réel, ils sont utiles pour construire des modèles étudiables.\nUn signal de puissance moyenne totale non nulle est un signal  d’énergie infinie."
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 18,
+    "section": "Classification énergétique",
+    "slide_content": "Cas des signaux périodiques:\nUn signal x(t) est dit périodique de période T0, si\nExemple de signaux périodiques:  sinus et cosinus\navec"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 19,
+    "section": "Classification énergétique",
+    "slide_content": "Propriétés d’un signal périodique:\nUn signal périodique continu a nécessairement un support temporel non borné.\nDémonstration : le signal se répète toutes les périodes [EQ: 𝑇_0] une infinité de fois\nSi un signal continu est périodique de période [EQ: 𝑇_0] , alors il est aussi périodique de période [EQ: 𝑘.𝑇_0] avec [EQ: 𝑘∈ ℤ]\nEtant donné un signal périodique, on appelle période fondamentale et on note  [EQ: 𝑇_0], la plus petite période du signal strictement positive:"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 20,
+    "section": "Classification énergétique",
+    "slide_content": "Cas des signaux périodiques\nOn a déjà vu qu’un signal périodique se répliquait une infinité de fois, il est donc nécessairement d’énergie infinie.\nun signal [EQ: 𝑥(𝑡)] est périodique de période [EQ: 𝑇_0], alors sa puissance moyenne est définie par:"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 21,
+    "section": "Classification énergétique",
+    "slide_content": "Les signaux à énergie finie\n-  les signaux transitoires\n-  les signaux à support temporal borné\nLes signaux à énergie infinie\n-  à puissance moyenne finie\nex. les signaux périodiques\n-  à puissance moyenne infinie\nex. la rampe  [EQ: 𝑥(𝑡)=𝑡]"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 22,
+    "section": "Propriétés d’un signal",
+    "slide_content": "Causalité\nUn signal [EQ: 𝑥(𝑡)  ]est dit causal si et seulement si [EQ: 𝑥(𝑡)=0, ∀ 𝑡<0]\nSignal causal                                  signal non causal"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 23,
+    "section": "Propriétés d’un signal",
+    "slide_content": "Parité\nUn signal [EQ: 𝑥(𝑡) ]est pair si [EQ: 𝑥(𝑡)=𝑥(−𝑡)]\nUn signal [EQ: 𝑥(𝑡) ]est impair si  [EQ: 𝑥(𝑡)=−𝑥(−𝑡)]"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 24,
+    "section": "Propriétés d’un signal",
+    "slide_content": "Parité\nTout signal réel [EQ: 𝑥(𝑡) ]quelconque peut s’écrire sous forme de la  somme de deux signaux : un signal pair et un signal impair :"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 25,
+    "section": "Propriétés d’un signal",
+    "slide_content": "Transformations de la variable t\nRetournement:   symétrie par rapport à 0\nx(t) → x(-t)"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 26,
+    "section": "Propriétés d’un signal",
+    "slide_content": "Transformations de la variable t\nTranslation:   de t0\nx(t) → x(t - t0)   (décalage vers la droite)\nx(t) → x(t + t0)  (décalage vers la gauche)"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 27,
+    "section": "Propriétés d’un signal",
+    "slide_content": "Transformations de la variable t\nChangement  d’échelle: x(t) → x(at)\n(a>1)   contraction\n(a<1)   dilatation\nIllustration: https://vincmazet.github.io/spetsi/dilatation.html"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 28,
+    "section": "Propriétés d’un signal",
+    "slide_content": "Transformations de la variable t\nChangement  d’échelle: x(t) → x(at)\nIllustration: https://vincmazet.github.io/spetsi/dilatation.html"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 29,
+    "section": "Quelques signaux élémentaires",
+    "slide_content": "Sinusoïde\nIllustration: https://vincmazet.github.io/spetsi/sinus.html"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 30,
+    "section": "Quelques signaux élémentaires",
+    "slide_content": "Sinus Cardinal\nCe signal joue un rôle important en traitement du signal\nIl apparaîtra naturellement quand nous allons calculer des transformées de Fourier"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 31,
+    "section": "Quelques signaux élémentaires",
+    "slide_content": "Signal rectangulaire\nOn l’appelle aussi signal porte. Il sert de fonction de fenêtrage élémentaire."
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 32,
+    "section": "Quelques signaux élémentaires",
+    "slide_content": "Signal rectangulaire\nfenêtrage : si on prend un signal quelconque [EQ: 𝑥(𝑡) ]et qu’on le multiplie par un signal porte, cela revient à étudier le signal [EQ: 𝑥(𝑡) ]uniquement sur le support  [EQ: ((−𝑇/2), (𝑇/2))]  :"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 33,
+    "section": "Quelques signaux élémentaires",
+    "slide_content": "Fonction triangulaire"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 34,
+    "section": "Quelques signaux élémentaires",
+    "slide_content": "Fonction échelon unité (Heaviside )\n[EQ: Γ(𝑡)=(0    pour   𝑡<01    pour   𝑡≥0)]\nPar convention, on admet une valeur à l’origine[EQ:  Γ(𝑡)=1 ]pout t=0\nCette fonction permet de rendre causal un signal [EQ: :  Γ(𝑡).  𝑥(𝑡) ] est nul si [EQ: 𝑡<0]"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 35,
+    "section": "Quelques signaux élémentaires",
+    "slide_content": "Fonction signe\nPar défaut, on admet une valeur à l’origine, [EQ: 𝑠𝑔𝑛(𝑡)=1] pour [EQ: t=0]"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 36,
+    "section": "La distribution de Dirac",
+    "slide_content": "L’Impulsion de Dirac est définie par:\nδ(t) ne peut pas être représentée graphiquement. On la schématise par le symbole\nAttention: le 1 marqué sur la flèche représente l’aire de cette impulsion et non l’hauteur de l’impulsion"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 37,
+    "section": "La distribution de Dirac",
+    "slide_content": "Mathématiquement, l’impulsion de Dirac est caractérisée par:\nUne aire valant 1 :   [EQ: ∞+∞𝛿(𝑡)𝑑𝑡=1]\nUne valeur nulle sauf en 0 : [EQ: 𝛿(𝑡)=0,     ∀ 𝑡 ≠0]\nDirac appliquée à une fonction : [EQ: 𝑥(𝑡).𝛿(𝑡)=𝑥(0).𝛿(𝑡)]\n([EQ: ∞+∞𝑥(𝑡)𝛿(𝑡)𝑑𝑡=𝑥(0))]\nLa distribution de Dirac est une fonction paire"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 38,
+    "section": "La distribution de Dirac",
+    "slide_content": "Remarque 1: l’Impulsion de Dirac peut être vue comme une fonction porte dont la largeur T tendrait vers 0 et dont l’aire est égale à 1\nIllustration: https://vincmazet.github.io/spetsi/limite-dirac.html\nRemarque 2: : On peut considérer [EQ: 𝛿(𝑡) ]comme la dérivée de la fonction échelon"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 39,
+    "section": "La distribution de Dirac",
+    "slide_content": "Dirac décalée de t0: [EQ:    𝛿(𝑡−𝑡_0) ]est telle que:\n-   [EQ: −∞+∞𝛿(𝑡−𝑡_0)dt=1]\n-  [EQ: 𝛿(𝑡−𝑡_0)=0     ∀ 𝑡 ≠𝑡_0]\n- [EQ:   𝑥(𝑡)𝛿(𝑡−𝑡_0)=𝑥(𝑡_0)𝛿(𝑡−𝑡_0)]"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 40,
+    "section": "Peigne de Dirac",
+    "slide_content": "On appelle peigne de Dirac une somme infinie d’impulsions de Dirac régulièrement espacées de  [EQ: 𝑇] . Elle est définie par :\n[EQ: Ш_𝑇(𝑡)=𝑘=−∞+∞𝛿(𝑡−𝑘𝑇) ]\n[EQ: 𝑇] est la période du peigne."
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 41,
+    "section": "Peigne de Dirac",
+    "slide_content": "Cette fonction permet de modéliser de façon théorique le processus d’échantillonnage"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 42,
+    "section": "Conclusion",
+    "slide_content": "Etant donné un signal, on sait maintenant le caractériser de la façon suivante:\n◮ Continu / Discret ?\n◮ Support temporel borné/fini / non borné/infini ?\n◮ Périodique ou pas ? Période fondamentale ?\n◮ Energie finie / Puissance finie ?\n◮ Deux cas courants :\nSignaux périodiques : énergie totale infinie, puissance moyenne totale finie\nSignaux à support temporel borné : énergie totale finie, puissance moyenne totale nulle"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 43,
+    "section": "Remarques",
+    "slide_content": "Un signal expérimental s(t) est généralement un signal physique délivré par un capteur ou un appareil de mesure et varie en fonction du temps. Il doit être physiquement réalisable et répondre à un ensemble de contraintes :\nà énergie bornée,\nà amplitude bornée,\ncontinu,\ncausal, défini sur ℝ+,\nà support borné (de durée limitée ou finie)"
+  },
+  {
+    "chap_id": 1,
+    "chap_name": "Représentation temporelle des signaux",
+    "slide_id": 44,
+    "section": "Remarques",
+    "slide_content": "Sur le plan théorique, un signal est représenté par une fonction réelle ou complexe qui permet son étude de façon plus aisée. Ainsi les modèles utilisés possèdent des caractéristiques différentes des signaux expérimentaux :\nà énergie théorique infinie,\nà amplitude non bornée,\nayant des  discontinuités,\ndéfinie sur ℝ ou ℂ,\nà support non borné   (observé durant un temps infini)"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 2,
+    "section": "Contenu du cours",
+    "slide_content": "Introduction\nDéfinition d'un système\nClassification des systèmes\nCaractérisation temporelle: Réponse d'un système LTI à une\nentrée\nRéponse impulsionnelle\nNotion de convolution\nRéponse à une entrée quelconque"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 3,
+    "section": "Introduction",
+    "slide_content": "Exemples de systèmes"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 4,
+    "section": "Définition",
+    "slide_content": "Un système est un ensemble d'éléments fonctionnels interagissant entre eux et qui établit un lien de cause à effet entre ses signaux d'entrées et ses signaux de sortie"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 5,
+    "section": "Définition",
+    "slide_content": "Un système est une entité qui transforme un signal d’ entrée en un signal de sortie."
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 6,
+    "section": "Classification des systèmes",
+    "slide_content": "Systèmes mono-variable et multi-variable\nMono-variable : système à une entrée et une sortie\nMulti-variable : nombre d'entrées + nombre de sorties > 2\nLinéarité\nS[EQ: i 𝑥(𝑡)=𝑎_1𝑥_1(𝑡)+𝑎_2𝑥_2(𝑡)] alors[EQ:  𝑦(𝑡)=𝑎_1𝑆(𝑥_1(𝑡))+𝑎_2𝑆(𝑥_2(𝑡))]"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 7,
+    "section": "Classification des systèmes",
+    "slide_content": "Causalité\nLa réponse du système ne peut pas se produire avant l'excitation qui l'engendre\nSi [EQ: 𝑥(𝑡)=0] pour  [EQ: 𝑡<0]   alors     [EQ: y(𝑡)=𝑆(𝑥(𝑡))=0  ] pour [EQ: 𝑡<0]"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 8,
+    "section": "Classification des systèmes",
+    "slide_content": "Invariance temporelle\nUn décalage temporel en entrée induit le même décalage en sortie.\nLa réponse du système est invariante par translation dans le temps.\nSi [EQ: y(𝑡)=𝑆(𝑥(𝑡)) ]    alors     [EQ: y(𝑡−𝑡_0)=𝑆(𝑥(𝑡−𝑡_0))]"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 9,
+    "section": "Classification des systèmes",
+    "slide_content": "Stabilité\nUn système est dit stable si en réponse à une entrée bornée, sa sortie est bornée.\nSystème qui, perturbé, revient à son état initial après disparition de la perturbation"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 10,
+    "section": "Exemples",
+    "slide_content": "Tachymètre\nEntrée : Vitesse d'un véhicule v(t)\nSortie : Position angulaire de l'aiguille  θ (t)\nPropriétés : linéaire, causal, invariant\nExemple de système\nnon invariant :  y(t) = t.x(t); parcmètre (le tarif dépend de l'heure)\nDans la suite, on étudiera les systèmes mono-variables continus linéaires à temps invariant (systèmes LTI)"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 11,
+    "section": "Les systèmes Linéaires Invariants Temporellement SLIT",
+    "slide_content": "Linéarité"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 12,
+    "section": "Les systèmes Linéaires Invariants Temporellement SLIT",
+    "slide_content": "Linéarité"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 13,
+    "section": "Les systèmes Linéaires Invariants Temporellement SLIT",
+    "slide_content": "Linéarité"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 14,
+    "section": "Les systèmes Linéaires Invariants Temporellement SLIT",
+    "slide_content": "Invariance temporelle"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 15,
+    "section": "Les systèmes Linéaires Invariants Temporellement SLIT",
+    "slide_content": "Exemple de système variant temporellement"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 16,
+    "section": "Les systèmes Linéaires Invariants Temporellement SLIT",
+    "slide_content": "Exemple de système variant temporellement"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 17,
+    "section": "Caractérisation d’un système LTI",
+    "slide_content": "Relation entrée/sortie\nLa plus courante: équation différentielle linéaire à coefficients constants\nAvec\nCaractérisation complète du système par la connaissance des coefficients (ai) et (bi)\nSortie y(t) calculable par la connaissance de x(t)"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 18,
+    "section": "Caractérisation d’un système LTI",
+    "slide_content": "Relation entrée/sortie\nLa plus courante: équation différentielle linéaire à coefficients constants\nAvec\nExemple:"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 19,
+    "section": "Caractérisation d’un système LTI",
+    "slide_content": "Réponse impulsionnelle\nLa réponse impulsionnelle h(t) d'un système S est sa réponse à une entrée sous forme d‘une impulsion de Dirac"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 20,
+    "section": "Caractérisation d’un système LTI",
+    "slide_content": "Réponse impulsionnelle\nLa réponse impulsionnelle h(t) d'un système S est sa réponse à une entrée sous forme d‘une impulsion de Dirac\nAvantages de la réponse impulsionnelle\ncaractérisation complète du système\npermet de calculer la sortie du système LTI pour d’autres signaux\nd’entrée"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 21,
+    "section": "Caractérisation d’un système LTI",
+    "slide_content": "Comment calculer la sortie du système LTI pour un signal d’entrée quelconque à partir de la réponse impulsionnelle ?\n⇒ notion de convolution"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 22,
+    "section": "Produit de convolution",
+    "slide_content": "On appelle   Produit de convolution  de deux signaux [EQ: 𝑥(𝑡)] et [EQ: 𝑦(𝑡)], et on note [EQ:    𝑥(𝑡)∗𝑦(𝑡)] l’expression:\nCas de signaux causaux:  [EQ: 𝑥(𝑡)=0,  𝑦(𝑡)=0 pour 𝑡 <0]"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 23,
+    "section": "Produit de convolution : interprétation",
+    "slide_content": "La convolution de [EQ: 𝑥(𝑡)] par [EQ: 𝑦(𝑡)] peut se décomposer en :\nUn retournement:\nUne translation de +t:\nUne multiplication:\nUne intégration:\nIllustration: https://vincmazet.github.io/spetsi/conv1c.html"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 24,
+    "section": "Produit de convolution : interprétation graphique",
+    "slide_content": ""
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 25,
+    "section": "Produit de convolution : Exemple",
+    "slide_content": "Calculer le produit de convolution des signaux suivants:"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 26,
+    "section": "Produit de convolution : Exemple",
+    "slide_content": ""
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 27,
+    "section": "Produit de convolution : Propriétés",
+    "slide_content": "Commutativité :\nAssociativité :\n[EQ: 𝑥(𝑡)∗𝑦(𝑡)∗𝑧(𝑡)=𝑥(𝑡)∗(𝑦(𝑡)∗𝑧(𝑡))=[𝑥(𝑡)∗𝑦(𝑡)]∗𝑧(𝑡)]\nDistributivité par rapport à l’addition :\nElément neutre du produit de convolution: impulsion de Dirac\n[EQ: 𝑥(𝑡)∗𝛿(𝑡)=𝑥(𝑡)]\nTranslation temporelle (convolution avec un Dirac retardé )"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 28,
+    "section": "Produit de convolution : Propriétés",
+    "slide_content": "Convolution avec un peigne de Dirac:\nPeigne de Dirarc:           [EQ: Ш_𝑇(𝑡)=𝑘=−∞+∞𝛿(𝑡−𝑘𝑇)]\n[EQ: 𝑓(𝑡)∗] [EQ: Ш_𝑇(𝑡)=] [EQ: 𝑘=−∞+∞𝑓(𝑡)∗𝛿(𝑡−𝑘𝑇)]  (Linéarité de la convolution: on sort la somme)\n[EQ: ⟹]        [EQ: 𝑓(𝑡)∗ Ш_𝑇(𝑡)= 𝑘=−∞+∞𝑓(𝑡−𝑘𝑇)]  (Convolution avec un Dirac retardé)\n[EQ: ⟹ ]On obtient une fonction périodique formée d’une recopie de [EQ: 𝑓 ]autour de\nchaque dent."
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 29,
+    "section": "Réponse d’un système LTI à une entrée quelconque",
+    "slide_content": "Application de la notion de convolution\n."
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 30,
+    "section": "Réponse d’un système LTI à une entrée quelconque",
+    "slide_content": "Application de la notion de convolution\nElément neutre  de la convolution\n[EQ:       𝑥(𝑡)=𝑥(𝑡)∗𝛿(𝑡)⟹𝑥(𝑡)=−∞+∞𝑥(𝜏)  𝛿(𝑡−𝜏)𝑑𝜏]\nCalculer la sortie de [EQ: 𝑥(𝑡):]  [EQ: 𝑦(𝑡)=𝑆(𝑥(𝑡))]\n[EQ:        ⟹𝑦(𝑡)=𝑆(−∞+∞𝑥(𝜏)  𝛿(𝑡−𝜏)𝑑𝜏)]\nPropriété de linéarité du système [EQ:           𝑦(𝑡)=−∞+∞𝑥(𝜏)  𝑆[𝛿(𝑡−𝜏)]𝑑𝜏]\nPropriété d’invariance temporelle du système:\n[EQ: 𝑆(𝛿(𝑡))=ℎ(𝑡)]      [EQ:         𝑆(𝛿(𝑡−𝜏))=ℎ(𝑡−𝜏)]\nRéponse impulsionnelle décalée"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 31,
+    "section": "Réponse d’un système LTI à une entrée quelconque",
+    "slide_content": "La réponse du système LTI à une entrée quelconque x est la convolution de x avec la réponse impulsionnelle h du système.\n⇒ La réponse impulsionnelle h caractérise entièrement le système.\nOn en déduit [EQ:           𝑦(𝑡)=−∞+∞𝑥(𝜏)  ℎ(𝑡−𝜏)𝑑𝜏      ]\n[EQ:  ⟹]                          [EQ: 𝑦(𝑡)=𝑥(𝑡)∗ℎ(𝑡)]"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 32,
+    "section": "Stabilité et réponse impulsionnelle",
+    "slide_content": "un système est stable si sa sortie est bornée lorsque son entrée est bornée\nQuelle est la condition sur [EQ: ℎ(𝑡) ]pour que [EQ: 𝑦(𝑡) ]soit bornée ?\n⇒ Un système est stable ssi sa réponse impulsionnelle est absolument\nintégrable:"
+  },
+  {
+    "chap_id": 2,
+    "chap_name": "Systèmes linéaires continus",
+    "slide_id": 33,
+    "section": "Causalité et réponse impulsionnelle",
+    "slide_content": "Un système SLIT est causal si sa réponse impulsionnelle est nulle pour t < 0 :"
+  }
+]
