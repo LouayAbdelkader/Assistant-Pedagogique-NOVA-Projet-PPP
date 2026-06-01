@@ -24,7 +24,6 @@
   - [4. Frontend Angular](#4-frontend-angular)
 - [Architecture globale](#architecture-globale)
 - [Technologies utilisées](#technologies-utilisées)
-- [Auteur](#auteur)
 
 ---
 
