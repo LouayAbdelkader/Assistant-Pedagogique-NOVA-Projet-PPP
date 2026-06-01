@@ -49,6 +49,8 @@ projet/
 │   └── README.md               # Documentation détaillée du backend
 ├── assistant-pedagogique-ui/   # Frontend Angular
 │   └── README.md               # Documentation détaillée du frontend
+├── assistant-ia/               # Module IA
+│   └── README.md               # Documentation détaillée du module IA
 └── README.md                   # Ce fichier (vue d'ensemble)
 ```
 
@@ -56,6 +58,7 @@ projet/
 |---------|-------------|--------|
 | `assistant-backend/` | API Spring Boot (JWT, JPA, sécurité) | [Voir README](./assistant-backend/README.md) |
 | `assistant-pedagogique-ui/` | Interface Angular (Tailwind, Chart.js) | [Voir README](./assistant-pedagogique-ui/README.md) |
+| `assistant-pedagogique-ai/` | Service IA (FastAPI, embeddings, LLM) | [Voir README](./assistant-pedagogique-ai/README.md) |
 
 ---
 
@@ -79,6 +82,15 @@ Chaque sous-projet contient son propre README avec des instructions spécifiques
 - Documentation des services et intercepteurs
 - Commandes PowerShell (Set-ExecutionPolicy)
 
+### 📁 assistant-ia/README.md
+- Installation de Python et des dépendances
+- Configuration de MySQL (fichier `config.py`)
+- Téléchargement du modèle spaCy (`fr_core_news_sm`)
+- Installation d’Ollama et du modèle `llama3.2`
+- Exécution des notebooks de prétraitement et vectorisation
+- Lancement du serveur FastAPI (`python main.py`)
+- Documentation des endpoints `/predict` et `/top-questions`
+
 ---
 
 ## Prérequis
@@ -92,7 +104,7 @@ Avant de commencer, assurez-vous d'avoir installé :
 | **MySQL** | 8.0+ | Base de données (via XAMPP) |
 | **Node.js** | 18+ | Frontend Angular |
 | **Angular CLI** | 17+ | Serveur de développement |
-| **Python** | 3.8+ | Service IA FastAPI |
+| **Python** | 3.9+ | Service IA FastAPI |
 
 ---
 
@@ -127,10 +139,19 @@ Le backend tourne sur : `http://localhost:8080`
 ### 3. Service IA FastAPI
 
 ```bash
-cd fassistant-pedagogique-main (AI)  # (dossier séparé)
-> python .\main.py
-```
+cd assistant-ia
 
+# (Optionnel) Créer un environnement virtuel
+python -m venv venv
+source venv/bin/activate  # ou venv\Scripts\activate sous Windows
+
+# Installer les dépendances (la commande détaillée dans le README)
+
+# Configurer les identifiants MySQL dans src/config.py
+
+# Lancer le service
+python main.py
+```
 Le service IA tourne sur : `http://localhost:5000`
 
 ### 4. Frontend Angular
@@ -215,7 +236,7 @@ Le frontend est accessible sur : `http://localhost:4200`
 |-----------|--------------|
 | **Backend** | Spring Boot 4.0.5, Spring Security, JWT, JPA/Hibernate, MySQL |
 | **Frontend** | Angular 17, TypeScript, Tailwind CSS, Chart.js |
-| **Service IA** | FastAPI, Python, scikit-learn, pandas |
+| **Service IA** | FastAPI, Python, sentence-transformers, scikit-learn, pandas, Ollama (llama3.2) |
 | **Base de données** | MySQL 8.0 (XAMPP) |
 
 ---
@@ -230,8 +251,8 @@ cd assistant-backend
 mvn spring-boot:run
 
 # 3. Lancer le service IA (dans un autre terminal)
-cd fastapi-service
-uvicorn main:app --reload --port 5000
+cd assistant-pedagogique-ai
+python main.py
 
 # 4. Lancer le frontend (dans un autre terminal)
 cd assistant-pedagogique-ui
