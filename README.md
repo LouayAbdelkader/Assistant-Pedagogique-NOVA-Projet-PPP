@@ -127,9 +127,8 @@ Le backend tourne sur : `http://localhost:8080`
 ### 3. Service IA FastAPI
 
 ```bash
-cd fastapi-service  # (dossier séparé)
-pip install -r requirements.txt
-uvicorn main:app --reload --port 5000
+cd fassistant-pedagogique-main (AI)  # (dossier séparé)
+> python .\main.py
 ```
 
 Le service IA tourne sur : `http://localhost:5000`
