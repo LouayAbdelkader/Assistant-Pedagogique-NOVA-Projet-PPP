@@ -402,16 +402,4 @@ Remplacer `{user_id}` par l'identifiant numérique de l'étudiant.
 
 ---
 
-# 👥 Auteurs
 
-Projet réalisé dans le cadre du module PPP (Projet Professionnel Personnel).
-
-Université / École : Institut National des Sciences Appliquées et de Technologies
-
-Année universitaire : 2025-2026
-
----
-
-# 📄 Licence
-
-Projet académique réalisé à des fins pédagogiques.
