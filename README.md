@@ -142,7 +142,7 @@ Le backend tourne sur : `http://localhost:8080`
 ### 3. Service IA FastAPI
 
 ```bash
-cd assistant-ia
+cd assistant-pedagogique-ia
 
 # (Optionnel) Créer un environnement virtuel
 python -m venv venv
