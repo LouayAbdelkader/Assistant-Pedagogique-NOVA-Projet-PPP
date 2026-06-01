@@ -1,0 +1,1823 @@
+{
+    "course_name": "Traitement du signal",
+    "course_plan": [
+        {
+            "chap_id": 0,
+            "chap_name": "Introduction"
+        },
+        {
+            "chap_id": 1,
+            "chap_name": "Représentation temporelle des signaux"
+        },
+        {
+            "chap_id": 2,
+            "chap_name": "Systèmes linéaires continus"
+        }
+    ],
+    "chapters": [
+        {
+            "chap_id": 1,
+            "chap_name": "Représentation temporelle des signaux",
+            "content": [
+                {
+                    "slide_id": 2,
+                    "section": "Les différentes classes de signaux",
+                    "categories": {},
+                    "notions": [
+                        "Signaux réels complexes",
+                        "Classification énergétique",
+                        "critères"
+                    ],
+                    "slide_content": "Différents critères de classification :\nNombre de variables ;\nSignaux réels / complexes ;\nDéterministes / aléatoires ;\nContinus / discrets ;\nClassification énergétique."
+                },
+                {
+                    "slide_id": 3,
+                    "section": "1- Classification en fonction du nombre de variables",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide3_img1.png",
+                            "../data/extracted_images\\chapitre1\\slide3_img2.png",
+                            "../data/extracted_images\\chapitre1\\slide3_img3.png"
+                        ]
+                    },
+                    "notions": [],
+                    "slide_content": ""
+                },
+                {
+                    "slide_id": 4,
+                    "section": "2- Signaux réels / complexes",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 3,
+                                "slide": 4,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑗: 𝑗^2=−1",
+                                "raw_itertext": "𝑗: 𝑗2=−1"
+                            },
+                            {
+                                "formula_id": 4,
+                                "slide": 4,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥(𝑡)=𝑎(𝑡)+𝑗 𝑏(𝑡)",
+                                "raw_itertext": "𝑥𝑡=𝑎𝑡+𝑗 𝑏𝑡"
+                            },
+                            {
+                                "formula_id": 5,
+                                "slide": 4,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑅𝑒(𝑥(𝑡))=𝑎(𝑡)",
+                                "raw_itertext": "𝑅𝑒𝑥𝑡=𝑎𝑡"
+                            },
+                            {
+                                "formula_id": 6,
+                                "slide": 4,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝐼𝑚(𝑥(𝑡))=𝑏(𝑡)",
+                                "raw_itertext": "𝐼𝑚𝑥𝑡=𝑏𝑡"
+                            },
+                            {
+                                "formula_id": 7,
+                                "slide": 4,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "(𝑥(𝑡))=√(𝑎2𝑡+𝑏2𝑡)",
+                                "raw_itertext": "𝑥(𝑡)=𝑎2𝑡+𝑏2𝑡"
+                            },
+                            {
+                                "formula_id": 8,
+                                "slide": 4,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝐴𝑟𝑔(𝑥(𝑡))=𝑎𝑟𝑐𝑡𝑎𝑛((𝑏(𝑡)/𝑎(𝑡)))",
+                                "raw_itertext": "𝐴𝑟𝑔𝑥𝑡=𝑎𝑟𝑐𝑡𝑎𝑛𝑏(𝑡)𝑎(𝑡)"
+                            },
+                            {
+                                "formula_id": 9,
+                                "slide": 4,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥(𝑡)=(𝑥(𝑡))𝑒^𝑗𝐴𝑟𝑔𝑥𝑡",
+                                "raw_itertext": "𝑥𝑡=𝑥𝑡𝑒𝑗𝐴𝑟𝑔𝑥𝑡"
+                            },
+                            {
+                                "formula_id": 10,
+                                "slide": 4,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥^∗(𝑡)=𝑎(𝑡)−𝑗 𝑏(𝑡)=(𝑥(𝑡))𝑒^−𝑗𝐴𝑟𝑔𝑥𝑡",
+                                "raw_itertext": "𝑥∗𝑡=𝑎𝑡−𝑗 𝑏𝑡=𝑥𝑡𝑒−𝑗𝐴𝑟𝑔𝑥𝑡"
+                            }
+                        ]
+                    },
+                    "notions": [
+                        "Complexe conjugué",
+                        "Nombre complexe",
+                        "partie réelle"
+                    ],
+                    "slide_content": "signal réel  :    si   [EQ: 𝑥(𝑡)∈ℝ]\nsignal complexe : si   [EQ: 𝑥(𝑡)∈ℂ]\nNotations usuelles:\nNombre complexe  [EQ: 𝑗: 𝑗^2=−1]\nSi [EQ: 𝑥(𝑡)=𝑎(𝑡)+𝑗 𝑏(𝑡)]  :\npartie réelle : [EQ: 𝑅𝑒(𝑥(𝑡))=𝑎(𝑡)]\npartie imaginaire:  [EQ: 𝐼𝑚(𝑥(𝑡))=𝑏(𝑡)]\nmodule: [EQ: (𝑥(𝑡))=√(𝑎2𝑡+𝑏2𝑡)]\nargument: [EQ: 𝐴𝑟𝑔(𝑥(𝑡))=𝑎𝑟𝑐𝑡𝑎𝑛((𝑏(𝑡)/𝑎(𝑡)))]\n[EQ: 𝑥(𝑡)=(𝑥(𝑡))𝑒^𝑗𝐴𝑟𝑔𝑥𝑡]\nComplexe conjugué:   [EQ: 𝑥^∗(𝑡)=𝑎(𝑡)−𝑗 𝑏(𝑡)=(𝑥(𝑡))𝑒^−𝑗𝐴𝑟𝑔𝑥𝑡]"
+                },
+                {
+                    "slide_id": 5,
+                    "section": "3-  Signaux déterministes /  aléatoires",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide5_img4.png",
+                            "../data/extracted_images\\chapitre1\\slide5_img5.png",
+                            "../data/extracted_images\\chapitre1\\slide5_img6.png"
+                        ]
+                    },
+                    "notions": [
+                        "Signaux déterministes",
+                        "signaux périodiques",
+                        "signaux"
+                    ],
+                    "slide_content": "Signaux déterministes (ou signaux certains): on connaît la valeur du signal quelque soit l’instant t .\nLeur évolution en fonction du temps peut être parfaitement modélisée par une fonction mathématique appropriée.\nOn retrouve dans cette classe les signaux périodiques, les signaux non périodiques et les signaux transitoires:\napériodiques \t           périodiques                transitoires"
+                },
+                {
+                    "slide_id": 6,
+                    "section": "3- Signaux déterministes / aléatoires",
+                    "categories": {
+                        "exemple": [
+                            "Exemple : le bruit"
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide6_img7.png"
+                        ]
+                    },
+                    "notions": [
+                        "Signaux aléatoires",
+                        "propriétés statistiques",
+                        "probabilité"
+                    ],
+                    "slide_content": "Signaux aléatoires : l’évolution est imprévisible et non reproductible d’une expérience à l’autre.\nExemple : le bruit\nIl faut faire appel à leurs propriétés statistiques pour les décrire (moyenne, variance, loi de probabilité,…).\nSi leurs propriétés statistiques sont invariantes dans le temps, on dit qu’ils sont  stationnaires."
+                },
+                {
+                    "slide_id": 7,
+                    "section": "3-  Signaux déterministes /  aléatoires",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide7_img8.png"
+                        ]
+                    },
+                    "notions": [
+                        "bruit",
+                        "signal"
+                    ],
+                    "slide_content": "On a souvent:\nsignal réel  = signal déterministe  +  signal aléatoire ( bruit)"
+                },
+                {
+                    "slide_id": 8,
+                    "section": "4- Signaux continus / discrets",
+                    "categories": {
+                        "exemple": [
+                            "Exemple : onde électromagnétique, signal électrique, ...",
+                            "Exemple : cours de la bourse enregistré chaque heure, signal"
+                        ]
+                    },
+                    "notions": [
+                        "signaux temporels",
+                        "Signaux",
+                        "signal électrique"
+                    ],
+                    "slide_content": "Il existe deux types de signaux temporels :\nSignaux à variable continue : [EQ: 𝑥(𝑡)   𝑎𝑣𝑒𝑐   𝑡 ∈ℝ]\nsignal connu à chaque instant t\nExemple : onde électromagnétique, signal électrique, ...\nTraitement analogique du signal\nSignaux à variable discrète:   [EQ: 𝑥_𝑛   𝑎𝑣𝑒𝑐    𝑛 ∈ℤ]\nsignal connu uniquement à certains instants tn\nExemple : cours de la bourse enregistré chaque heure, signal\nprovenant d’un signal analogique que l’on a échantillonné\nTraitement numérique du signal"
+                },
+                {
+                    "slide_id": 9,
+                    "section": "4- Signaux continus / discrets",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide9_img9.png"
+                        ]
+                    },
+                    "notions": [
+                        "signaux temporels",
+                        "types"
+                    ],
+                    "slide_content": "Il existe deux types de signaux temporels :"
+                },
+                {
+                    "slide_id": 10,
+                    "section": "4- Signaux continus / discrets",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide10_img10.png",
+                            "../data/extracted_images\\chapitre1\\slide10_img11.png"
+                        ]
+                    },
+                    "notions": [],
+                    "slide_content": ""
+                },
+                {
+                    "slide_id": 11,
+                    "section": "4- Signaux continus / discrets",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide11_img12.png"
+                        ]
+                    },
+                    "notions": [],
+                    "slide_content": ""
+                },
+                {
+                    "slide_id": 12,
+                    "section": "4- Signaux continus / discrets",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide12_img13.png"
+                        ]
+                    },
+                    "notions": [],
+                    "slide_content": ""
+                },
+                {
+                    "slide_id": 13,
+                    "section": "4- Signaux continus / discrets",
+                    "categories": {
+                        "definition": [
+                            "Support temporel: On appelle support temporel, l’ensemble des temps [EQ: 𝑡] (ou des échantillons [EQ: 𝑛] si le signal est discret) pour lesquels le signal [EQ: 𝑥(𝑡) ](resp. [EQ: 𝑥_𝑛 ]) est défini et non nul."
+                        ],
+                        "remarque": [
+                            "Remarque : Dans la pratique, tous les signaux physiques observés sont à support fini ou à support borné."
+                        ]
+                    },
+                    "notions": [
+                        "intervalle",
+                        "signaux physiques",
+                        "Support"
+                    ],
+                    "slide_content": "Support temporel: On appelle support temporel, l’ensemble des temps [EQ: 𝑡] (ou des échantillons [EQ: 𝑛] si le signal est discret) pour lesquels le signal [EQ: 𝑥(𝑡) ](resp. [EQ: 𝑥_𝑛 ]) est défini et non nul.\nCas continu. Si cet ensemble correspond à un intervalle ayant des limites hautes et basses, on dit que le support temporel est borné. Sinon, on dit qu’il est non borné.\nCas discret. Si cet ensemble contient un nombre fini de valeurs, on dit que le support temporel est fini. Sinon, on dit qu’il est infini.\nRemarque : Dans la pratique, tous les signaux physiques observés sont à support fini ou à support borné."
+                },
+                {
+                    "slide_id": 14,
+                    "section": "5- Classification énergétique",
+                    "categories": {
+                        "definition": [
+                            "Puissance instantanée:  Etant donné un signal continu x(t), on appelle puissance instantanée la quantité |x(t)|2"
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide14_img14.png"
+                        ]
+                    },
+                    "notions": [
+                        "Puissance instantanée",
+                        "signal continu"
+                    ],
+                    "slide_content": "Puissance instantanée:  Etant donné un signal continu x(t), on appelle puissance instantanée la quantité |x(t)|2"
+                },
+                {
+                    "slide_id": 15,
+                    "section": "5- Classification énergétique",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 15,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝐸_𝑥=−∞+∞𝑥(𝑡)^2𝑑𝑡",
+                                "raw_itertext": "𝐸𝑥=−∞+∞𝑥(𝑡)2𝑑𝑡"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide15_img15.png"
+                        ]
+                    },
+                    "notions": [
+                        "Energie totale",
+                        "puissance",
+                        "somme"
+                    ],
+                    "slide_content": "Energie totale: L’énergie totale Ex correspond à la somme de la puissance instantanée sur ℝ."
+                },
+                {
+                    "slide_id": 16,
+                    "section": "5- Classification énergétique",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 16,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑃_𝑥=lim𝑇→+∞   (1/𝑇)−(𝑇/2)+(𝑇/2)𝑥(𝑡)^2𝑑𝑡",
+                                "raw_itertext": "𝑃𝑥=lim𝑇→+∞   1𝑇−𝑇2+𝑇2𝑥(𝑡)2𝑑𝑡"
+                            }
+                        ]
+                    },
+                    "notions": [
+                        "Puissance moyenne",
+                        "puissance",
+                        "valeur moyenne"
+                    ],
+                    "slide_content": "Puissance moyenne: La puissance moyenne (totale) Px correspond à la valeur moyenne de la puissance instantanée sur ℝ.\nSi le signal est à support temporel borné, sa puissance moyenne totale est donc nulle."
+                },
+                {
+                    "slide_id": 17,
+                    "section": "5- Classification énergétique",
+                    "categories": {
+                        "remarque": [
+                            "En pratique, c’est le cas de tous les signaux physiquement réalisables."
+                        ]
+                    },
+                    "notions": [
+                        "signaux",
+                        "énergie",
+                        "infinie"
+                    ],
+                    "slide_content": "Si Ex < +∞, on dit que le signal est à énergie finie.\nEn pratique, c’est le cas de tous les signaux physiquement réalisables.\nUn signal à énergie finie a une puissance moyenne totale nulle.\nSi Px < + ∞, on dit que le signal est à puissance finie.\nBien que ces signaux n’existent pas dans le monde réel, ils sont utiles pour construire des modèles étudiables.\nUn signal de puissance moyenne totale non nulle est un signal  d’énergie infinie."
+                },
+                {
+                    "slide_id": 18,
+                    "section": "5- Classification énergétique",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 18,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥(𝑡)=𝑥(𝑡+𝑘 𝑇_0), 𝑘∈ ℤ",
+                                "raw_itertext": "𝑥𝑡=𝑥𝑡+𝑘 𝑇0, 𝑘∈ ℤ"
+                            },
+                            {
+                                "formula_id": 2,
+                                "slide": 18,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥(𝑡)=sin(2 𝜋 𝑓_0𝑡)",
+                                "raw_itertext": "𝑥𝑡=sin2 𝜋 𝑓0𝑡"
+                            },
+                            {
+                                "formula_id": 3,
+                                "slide": 18,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑇_0=(1/𝑓0)",
+                                "raw_itertext": "𝑇0=1𝑓0"
+                            }
+                        ],
+                        "exemple": [
+                            "Exemple de signaux périodiques:  sinus et cosinus"
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide18_img16.png"
+                        ]
+                    },
+                    "notions": [
+                        "signaux périodiques",
+                        "Exemple"
+                    ],
+                    "slide_content": "Cas des signaux périodiques:\nUn signal x(t) est dit périodique de période T0, si\nExemple de signaux périodiques:  sinus et cosinus\navec"
+                },
+                {
+                    "slide_id": 19,
+                    "section": "5- Classification énergétique",
+                    "categories": {
+                        "definition": [
+                            "Etant donné un signal périodique, on appelle période fondamentale et on note  [EQ: 𝑇_0], la plus petite période du signal strictement positive:"
+                        ],
+                        "remarque": [
+                            "Etant donné un signal périodique, on appelle période fondamentale et on note  [EQ: 𝑇_0], la plus petite période du signal strictement positive:"
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide19_img17.png"
+                        ]
+                    },
+                    "notions": [
+                        "signal périodique",
+                        "signal continu",
+                        "période"
+                    ],
+                    "slide_content": "Propriétés d’un signal périodique:\nUn signal périodique continu a nécessairement un support temporel non borné.\nDémonstration : le signal se répète toutes les périodes [EQ: 𝑇_0] une infinité de fois\nSi un signal continu est périodique de période [EQ: 𝑇_0] , alors il est aussi périodique de période [EQ: 𝑘.𝑇_0] avec [EQ: 𝑘∈ ℤ]\nEtant donné un signal périodique, on appelle période fondamentale et on note  [EQ: 𝑇_0], la plus petite période du signal strictement positive:"
+                },
+                {
+                    "slide_id": 20,
+                    "section": "5- Classification énergétique",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 3,
+                                "slide": 20,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑃_𝑥=   (1/𝑇0)0𝑇_0𝑥(𝑡)^2𝑑𝑡",
+                                "raw_itertext": "𝑃𝑥=   1𝑇00𝑇0𝑥(𝑡)2𝑑𝑡"
+                            }
+                        ]
+                    },
+                    "notions": [
+                        "signal périodique",
+                        "signaux périodiques",
+                        "périodique"
+                    ],
+                    "slide_content": "Cas des signaux périodiques\nOn a déjà vu qu’un signal périodique se répliquait une infinité de fois, il est donc nécessairement d’énergie infinie.\nun signal [EQ: 𝑥(𝑡)] est périodique de période [EQ: 𝑇_0], alors sa puissance moyenne est définie par:"
+                },
+                {
+                    "slide_id": 21,
+                    "section": "5- Classification énergétique",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 21,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥(𝑡)=𝑡",
+                                "raw_itertext": "𝑥𝑡=𝑡"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide21_img18.png",
+                            "../data/extracted_images\\chapitre1\\slide21_img19.png"
+                        ]
+                    },
+                    "notions": [
+                        "signaux transitoires",
+                        "signaux périodiques",
+                        "signaux"
+                    ],
+                    "slide_content": "Les signaux à énergie finie\n-  les signaux transitoires\n-  les signaux à support temporal borné\nLes signaux à énergie infinie\n-  à puissance moyenne finie\nex. les signaux périodiques\n-  à puissance moyenne infinie\nex. la rampe  [EQ: 𝑥(𝑡)=𝑡]"
+                },
+                {
+                    "slide_id": 22,
+                    "section": "Propriétés d’un signal",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 2,
+                                "slide": 22,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥(𝑡)=0, ∀ 𝑡<0",
+                                "raw_itertext": "𝑥𝑡=0, ∀ 𝑡<0"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide22_img20.png",
+                            "../data/extracted_images\\chapitre1\\slide22_img21.png",
+                            "../data/extracted_images\\chapitre1\\slide22_img22.png",
+                            "../data/extracted_images\\chapitre1\\slide22_img23.png"
+                        ]
+                    },
+                    "notions": [
+                        "Causalité",
+                        "signal",
+                        "non causal"
+                    ],
+                    "slide_content": "Causalité\nUn signal [EQ: 𝑥(𝑡)  ]est dit causal si et seulement si [EQ: 𝑥(𝑡)=0, ∀ 𝑡<0]\nSignal causal                                  signal non causal"
+                },
+                {
+                    "slide_id": 23,
+                    "section": "Propriétés d’un signal",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 2,
+                                "slide": 23,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥(𝑡)=𝑥(−𝑡)",
+                                "raw_itertext": "𝑥𝑡=𝑥(−𝑡)"
+                            },
+                            {
+                                "formula_id": 4,
+                                "slide": 23,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥(𝑡)=−𝑥(−𝑡)",
+                                "raw_itertext": "𝑥𝑡=−𝑥(−𝑡)"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide23_img24.png",
+                            "../data/extracted_images\\chapitre1\\slide23_img25.png"
+                        ]
+                    },
+                    "notions": [
+                        "signal EQ",
+                        "signal"
+                    ],
+                    "slide_content": "Parité\nUn signal [EQ: 𝑥(𝑡) ]est pair si [EQ: 𝑥(𝑡)=𝑥(−𝑡)]\nUn signal [EQ: 𝑥(𝑡) ]est impair si  [EQ: 𝑥(𝑡)=−𝑥(−𝑡)]"
+                },
+                {
+                    "slide_id": 24,
+                    "section": "Propriétés d’un signal",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide24_img26.png",
+                            "../data/extracted_images\\chapitre1\\slide24_img27.png"
+                        ]
+                    },
+                    "notions": [
+                        "signal pair",
+                        "signaux",
+                        "Parité"
+                    ],
+                    "slide_content": "Parité\nTout signal réel [EQ: 𝑥(𝑡) ]quelconque peut s’écrire sous forme de la  somme de deux signaux : un signal pair et un signal impair :"
+                },
+                {
+                    "slide_id": 25,
+                    "section": "Propriétés d’un signal",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide25_img28.png"
+                        ]
+                    },
+                    "notions": [
+                        "t Retournement",
+                        "Transformations",
+                        "rapport"
+                    ],
+                    "slide_content": "Transformations de la variable t\nRetournement:   symétrie par rapport à 0\nx(t) → x(-t)"
+                },
+                {
+                    "slide_id": 26,
+                    "section": "Propriétés d’un signal",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide26_img29.png"
+                        ]
+                    },
+                    "notions": [
+                        "Transformations",
+                        "Translation",
+                        "droite"
+                    ],
+                    "slide_content": "Transformations de la variable t\nTranslation:   de t0\nx(t) → x(t - t0)   (décalage vers la droite)\nx(t) → x(t + t0)  (décalage vers la gauche)"
+                },
+                {
+                    "slide_id": 27,
+                    "section": "Propriétés d’un signal",
+                    "categories": {
+                        "exemple": [
+                            "Illustration: https://vincmazet.github.io/spetsi/dilatation.html"
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide27_img30.png"
+                        ]
+                    },
+                    "notions": [
+                        "Transformations",
+                        "t Changement",
+                        "contraction"
+                    ],
+                    "slide_content": "Transformations de la variable t\nChangement  d’échelle: x(t) → x(at)\n(a>1)   contraction\n(a<1)   dilatation\nIllustration: https://vincmazet.github.io/spetsi/dilatation.html"
+                },
+                {
+                    "slide_id": 28,
+                    "section": "Propriétés d’un signal",
+                    "categories": {
+                        "exemple": [
+                            "Illustration: https://vincmazet.github.io/spetsi/dilatation.html"
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide28_img31.png"
+                        ]
+                    },
+                    "notions": [
+                        "Transformations",
+                        "t Changement",
+                        "variable"
+                    ],
+                    "slide_content": "Transformations de la variable t\nChangement  d’échelle: x(t) → x(at)\nIllustration: https://vincmazet.github.io/spetsi/dilatation.html"
+                },
+                {
+                    "slide_id": 29,
+                    "section": "Quelques signaux élémentaires",
+                    "categories": {
+                        "exemple": [
+                            "Illustration: https://vincmazet.github.io/spetsi/sinus.html"
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide29_img32.png",
+                            "../data/extracted_images\\chapitre1\\slide29_img33.png"
+                        ]
+                    },
+                    "notions": [
+                        "Sinusoïde",
+                        "Illustration"
+                    ],
+                    "slide_content": "Sinusoïde\nIllustration: https://vincmazet.github.io/spetsi/sinus.html"
+                },
+                {
+                    "slide_id": 30,
+                    "section": "Quelques signaux élémentaires",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 30,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑠𝑖𝑛𝑐(𝑡)=( 1                  si 𝑡=0(sin𝜋𝑡/𝜋𝑡)        sinon)",
+                                "raw_itertext": "𝑠𝑖𝑛𝑐𝑡= 1                  si 𝑡=0sin𝜋𝑡𝜋𝑡        sinon"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide30_img34.png"
+                        ]
+                    },
+                    "notions": [
+                        "Sinus Cardinal",
+                        "signal",
+                        "traitement"
+                    ],
+                    "slide_content": "Sinus Cardinal\nCe signal joue un rôle important en traitement du signal\nIl apparaîtra naturellement quand nous allons calculer des transformées de Fourier"
+                },
+                {
+                    "slide_id": 31,
+                    "section": "Quelques signaux élémentaires",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 31,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑟𝑒𝑐𝑡_𝑇(𝑡)=(1    si (−𝑇/2)≤𝑡 ≤(𝑇/2)0                        sinon)",
+                                "raw_itertext": "𝑟𝑒𝑐𝑡𝑇𝑡=1    si −𝑇2≤𝑡 ≤𝑇20                        sinon"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide31_img35.png"
+                        ]
+                    },
+                    "notions": [
+                        "Signal rectangulaire",
+                        "fenêtrage élémentaire",
+                        "fonction"
+                    ],
+                    "slide_content": "Signal rectangulaire\nOn l’appelle aussi signal porte. Il sert de fonction de fenêtrage élémentaire."
+                },
+                {
+                    "slide_id": 32,
+                    "section": "Quelques signaux élémentaires",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide32_img36.png"
+                        ]
+                    },
+                    "notions": [
+                        "Signal rectangulaire",
+                        "signal porte",
+                        "fenêtrage"
+                    ],
+                    "slide_content": "Signal rectangulaire\nfenêtrage : si on prend un signal quelconque [EQ: 𝑥(𝑡) ]et qu’on le multiplie par un signal porte, cela revient à étudier le signal [EQ: 𝑥(𝑡) ]uniquement sur le support  [EQ: ((−𝑇/2), (𝑇/2))]  :"
+                },
+                {
+                    "slide_id": 33,
+                    "section": "Quelques signaux élémentaires",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 33,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "t𝑟𝑖(𝑡)=(1− (𝑡)  pour   (𝑡)≤10             pour   (𝑡)>1)",
+                                "raw_itertext": "t𝑟𝑖𝑡=1− 𝑡  pour   𝑡≤10             pour   𝑡>1"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide33_img37.png"
+                        ]
+                    },
+                    "notions": [
+                        "Fonction triangulaire"
+                    ],
+                    "slide_content": "Fonction triangulaire"
+                },
+                {
+                    "slide_id": 34,
+                    "section": "Quelques signaux élémentaires",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 34,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "Γ(𝑡)=(0    pour   𝑡<01    pour   𝑡≥0)",
+                                "raw_itertext": "Γ𝑡=0    pour   𝑡<01    pour   𝑡≥0"
+                            },
+                            {
+                                "formula_id": 2,
+                                "slide": 34,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "Γ(𝑡)=1",
+                                "raw_itertext": "Γ𝑡=1"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide34_img38.png"
+                        ]
+                    },
+                    "notions": [
+                        "Fonction échelon",
+                        "unité",
+                        "fonction"
+                    ],
+                    "slide_content": "Fonction échelon unité (Heaviside )\n[EQ: Γ(𝑡)=(0    pour   𝑡<01    pour   𝑡≥0)]\nPar convention, on admet une valeur à l’origine[EQ:  Γ(𝑡)=1 ]pout t=0\nCette fonction permet de rendre causal un signal [EQ: :  Γ(𝑡).  𝑥(𝑡) ] est nul si [EQ: 𝑡<0]"
+                },
+                {
+                    "slide_id": 35,
+                    "section": "Quelques signaux élémentaires",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 35,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑠𝑔𝑛(𝑡)=(−1    pour   𝑡<01    pour   𝑡≥0)",
+                                "raw_itertext": "𝑠𝑔𝑛𝑡=−1    pour   𝑡<01    pour   𝑡≥0"
+                            },
+                            {
+                                "formula_id": 2,
+                                "slide": 35,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑠𝑔𝑛(𝑡)=1",
+                                "raw_itertext": "𝑠𝑔𝑛𝑡=1"
+                            },
+                            {
+                                "formula_id": 3,
+                                "slide": 35,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "t=0",
+                                "raw_itertext": "t=0"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide35_img39.png"
+                        ]
+                    },
+                    "notions": [
+                        "valeur",
+                        "défaut",
+                        "origine"
+                    ],
+                    "slide_content": "Fonction signe\nPar défaut, on admet une valeur à l’origine, [EQ: 𝑠𝑔𝑛(𝑡)=1] pour [EQ: t=0]"
+                },
+                {
+                    "slide_id": 36,
+                    "section": "La distribution de Dirac",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 36,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝛿(𝑡)=(0 pour   𝑡≠0 +∞  pour   𝑡=0)",
+                                "raw_itertext": "𝛿𝑡=0 pour   𝑡≠0 +∞  pour   𝑡=0"
+                            }
+                        ],
+                        "remarque": [
+                            "Attention: le 1 marqué sur la flèche représente l’aire de cette impulsion et non l’hauteur de l’impulsion"
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide36_img40.png",
+                            "../data/extracted_images\\chapitre1\\slide36_img41.png"
+                        ]
+                    },
+                    "notions": [
+                        "Dirac",
+                        "flèche",
+                        "Impulsion"
+                    ],
+                    "slide_content": "L’Impulsion de Dirac est définie par:\nδ(t) ne peut pas être représentée graphiquement. On la schématise par le symbole\nAttention: le 1 marqué sur la flèche représente l’aire de cette impulsion et non l’hauteur de l’impulsion"
+                },
+                {
+                    "slide_id": 37,
+                    "section": "La distribution de Dirac",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 37,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "∞+∞𝛿(𝑡)𝑑𝑡=1",
+                                "raw_itertext": "∞+∞𝛿𝑡𝑑𝑡=1"
+                            },
+                            {
+                                "formula_id": 2,
+                                "slide": 37,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝛿(𝑡)=0,     ∀ 𝑡 ≠0",
+                                "raw_itertext": "𝛿𝑡=0,     ∀ 𝑡 ≠0"
+                            },
+                            {
+                                "formula_id": 3,
+                                "slide": 37,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥(𝑡).𝛿(𝑡)=𝑥(0).𝛿(𝑡)",
+                                "raw_itertext": "𝑥𝑡.𝛿𝑡=𝑥0.𝛿𝑡"
+                            },
+                            {
+                                "formula_id": 4,
+                                "slide": 37,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "∞+∞𝑥(𝑡)𝛿(𝑡)𝑑𝑡=𝑥(0))",
+                                "raw_itertext": "∞+∞𝑥(𝑡)𝛿𝑡𝑑𝑡=𝑥(0))"
+                            }
+                        ]
+                    },
+                    "notions": [
+                        "Dirac",
+                        "valeur",
+                        "fonction"
+                    ],
+                    "slide_content": "Mathématiquement, l’impulsion de Dirac est caractérisée par:\nUne aire valant 1 :   [EQ: ∞+∞𝛿(𝑡)𝑑𝑡=1]\nUne valeur nulle sauf en 0 : [EQ: 𝛿(𝑡)=0,     ∀ 𝑡 ≠0]\nDirac appliquée à une fonction : [EQ: 𝑥(𝑡).𝛿(𝑡)=𝑥(0).𝛿(𝑡)]\n([EQ: ∞+∞𝑥(𝑡)𝛿(𝑡)𝑑𝑡=𝑥(0))]\nLa distribution de Dirac est une fonction paire"
+                },
+                {
+                    "slide_id": 38,
+                    "section": "La distribution de Dirac",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 38,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝛿(𝑡)=lim𝑇→0(1/𝑇)𝑟𝑒𝑐𝑡_𝑇(𝑡)",
+                                "raw_itertext": "𝛿(𝑡)=lim𝑇→01𝑇𝑟𝑒𝑐𝑡𝑇(𝑡)"
+                            },
+                            {
+                                "formula_id": 3,
+                                "slide": 38,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝛿(𝑡)=(𝑑Γ(𝑡)/𝑑𝑡)",
+                                "raw_itertext": "𝛿𝑡=𝑑Γ(𝑡)𝑑𝑡"
+                            }
+                        ],
+                        "exemple": [
+                            "Illustration: https://vincmazet.github.io/spetsi/limite-dirac.html"
+                        ],
+                        "remarque": [
+                            "Remarque 1: l’Impulsion de Dirac peut être vue comme une fonction porte dont la largeur T tendrait vers 0 et dont l’aire est égale à 1",
+                            "Remarque 2: : On peut considérer [EQ: 𝛿(𝑡) ]comme la dérivée de la fonction échelon"
+                        ]
+                    },
+                    "notions": [
+                        "fonction échelon",
+                        "Dirac",
+                        "Remarque"
+                    ],
+                    "slide_content": "Remarque 1: l’Impulsion de Dirac peut être vue comme une fonction porte dont la largeur T tendrait vers 0 et dont l’aire est égale à 1\nIllustration: https://vincmazet.github.io/spetsi/limite-dirac.html\nRemarque 2: : On peut considérer [EQ: 𝛿(𝑡) ]comme la dérivée de la fonction échelon"
+                },
+                {
+                    "slide_id": 39,
+                    "section": "La distribution de Dirac",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 7,
+                                "slide": 39,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "−∞+∞𝛿(𝑡−𝑡_0)dt=1",
+                                "raw_itertext": "−∞+∞𝛿(𝑡−𝑡0)dt=1"
+                            },
+                            {
+                                "formula_id": 8,
+                                "slide": 39,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝛿(𝑡−𝑡_0)=0     ∀ 𝑡 ≠𝑡_0",
+                                "raw_itertext": "𝛿𝑡−𝑡0=0     ∀ 𝑡 ≠𝑡0"
+                            },
+                            {
+                                "formula_id": 9,
+                                "slide": 39,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥(𝑡)𝛿(𝑡−𝑡_0)=𝑥(𝑡_0)𝛿(𝑡−𝑡_0)",
+                                "raw_itertext": "𝑥(𝑡)𝛿𝑡−𝑡0=𝑥(𝑡0)𝛿𝑡−𝑡0"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide39_img42.png"
+                        ]
+                    },
+                    "notions": [
+                        "Dirac"
+                    ],
+                    "slide_content": "Dirac décalée de t0: [EQ:    𝛿(𝑡−𝑡_0) ]est telle que:\n-   [EQ: −∞+∞𝛿(𝑡−𝑡_0)dt=1]\n-  [EQ: 𝛿(𝑡−𝑡_0)=0     ∀ 𝑡 ≠𝑡_0]\n- [EQ:   𝑥(𝑡)𝛿(𝑡−𝑡_0)=𝑥(𝑡_0)𝛿(𝑡−𝑡_0)]"
+                },
+                {
+                    "slide_id": 40,
+                    "section": "Peigne de Dirac",
+                    "categories": {
+                        "definition": [
+                            "On appelle peigne de Dirac une somme infinie d’impulsions de Dirac régulièrement espacées de  [EQ: 𝑇] . Elle est définie par :"
+                        ],
+                        "formule": [
+                            {
+                                "formula_id": 2,
+                                "slide": 40,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "Ш_𝑇(𝑡)=𝑘=−∞+∞𝛿(𝑡−𝑘𝑇)",
+                                "raw_itertext": "Ш𝑇𝑡=𝑘=−∞+∞𝛿𝑡−𝑘𝑇"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide40_img43.png"
+                        ]
+                    },
+                    "notions": [
+                        "période",
+                        "peigne",
+                        "Dirac"
+                    ],
+                    "slide_content": "On appelle peigne de Dirac une somme infinie d’impulsions de Dirac régulièrement espacées de  [EQ: 𝑇] . Elle est définie par :\n[EQ: Ш_𝑇(𝑡)=𝑘=−∞+∞𝛿(𝑡−𝑘𝑇) ]\n[EQ: 𝑇] est la période du peigne."
+                },
+                {
+                    "slide_id": 41,
+                    "section": "Peigne de Dirac",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 41,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑓𝑡. Ш_T(𝑡)=𝑘=−∞+∞𝑓(𝑘𝑇)  𝛿(𝑡−𝑘𝑇)",
+                                "raw_itertext": "𝑓𝑡. ШT𝑡=𝑘=−∞+∞𝑓𝑘𝑇  𝛿(𝑡−𝑘𝑇)"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide41_img44.png"
+                        ]
+                    },
+                    "notions": [
+                        "échantillonnage",
+                        "fonction",
+                        "processus"
+                    ],
+                    "slide_content": "Cette fonction permet de modéliser de façon théorique le processus d’échantillonnage"
+                },
+                {
+                    "slide_id": 42,
+                    "section": "Conclusion",
+                    "categories": {},
+                    "notions": [
+                        "Signaux périodiques",
+                        "Signaux",
+                        "Périodique"
+                    ],
+                    "slide_content": "Etant donné un signal, on sait maintenant le caractériser de la façon suivante:\n◮ Continu / Discret ?\n◮ Support temporel borné/fini / non borné/infini ?\n◮ Périodique ou pas ? Période fondamentale ?\n◮ Energie finie / Puissance finie ?\n◮ Deux cas courants :\nSignaux périodiques : énergie totale infinie, puissance moyenne totale finie\nSignaux à support temporel borné : énergie totale finie, puissance moyenne totale nulle"
+                },
+                {
+                    "slide_id": 43,
+                    "section": "Remarques",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide43_img45.png"
+                        ]
+                    },
+                    "notions": [
+                        "signal expérimental",
+                        "capteur",
+                        "amplitude bornée"
+                    ],
+                    "slide_content": "Un signal expérimental s(t) est généralement un signal physique délivré par un capteur ou un appareil de mesure et varie en fonction du temps. Il doit être physiquement réalisable et répondre à un ensemble de contraintes :\nà énergie bornée,\nà amplitude bornée,\ncontinu,\ncausal, défini sur ℝ+,\nà support borné (de durée limitée ou finie)"
+                },
+                {
+                    "slide_id": 44,
+                    "section": "Remarques",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre1\\slide44_img46.png"
+                        ]
+                    },
+                    "notions": [
+                        "signaux expérimentaux",
+                        "fonction réelle complexe",
+                        "caractéristiques"
+                    ],
+                    "slide_content": "Sur le plan théorique, un signal est représenté par une fonction réelle ou complexe qui permet son étude de façon plus aisée. Ainsi les modèles utilisés possèdent des caractéristiques différentes des signaux expérimentaux :\nà énergie théorique infinie,\nà amplitude non bornée,\nayant des  discontinuités,\ndéfinie sur ℝ ou ℂ,\nà support non borné   (observé durant un temps infini)"
+                }
+            ]
+        },
+        {
+            "chap_id": 2,
+            "chap_name": "Systèmes linéaires continus",
+            "content": [
+                {
+                    "slide_id": 2,
+                    "section": "Contenu du cours",
+                    "categories": {},
+                    "notions": [
+                        "Caractérisation temporelle",
+                        "Introduction",
+                        "entrée"
+                    ],
+                    "slide_content": "Introduction\nDéfinition d'un système\nClassification des systèmes\nCaractérisation temporelle: Réponse d'un système LTI à une\nentrée\nRéponse impulsionnelle\nNotion de convolution\nRéponse à une entrée quelconque"
+                },
+                {
+                    "slide_id": 3,
+                    "section": "Introduction",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide3_img1.png",
+                            "../data/extracted_images\\chapitre2\\slide3_img2.png",
+                            "../data/extracted_images\\chapitre2\\slide3_img3.png"
+                        ]
+                    },
+                    "notions": [
+                        "Exemples",
+                        "systèmes"
+                    ],
+                    "slide_content": "Exemples de systèmes"
+                },
+                {
+                    "slide_id": 4,
+                    "section": "Définition",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide4_img4.png"
+                        ]
+                    },
+                    "notions": [
+                        "système",
+                        "éléments fonctionnels",
+                        "lien"
+                    ],
+                    "slide_content": "Un système est un ensemble d'éléments fonctionnels interagissant entre eux et qui établit un lien de cause à effet entre ses signaux d'entrées et ses signaux de sortie"
+                },
+                {
+                    "slide_id": 5,
+                    "section": "Définition",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide5_img5.png",
+                            "../data/extracted_images\\chapitre2\\slide5_img6.png",
+                            "../data/extracted_images\\chapitre2\\slide5_img7.png",
+                            "../data/extracted_images\\chapitre2\\slide5_img8.png",
+                            "../data/extracted_images\\chapitre2\\slide5_img9.png"
+                        ]
+                    },
+                    "notions": [
+                        "système",
+                        "entrée",
+                        "signal"
+                    ],
+                    "slide_content": "Un système est une entité qui transforme un signal d’ entrée en un signal de sortie."
+                },
+                {
+                    "slide_id": 6,
+                    "section": "Classification des systèmes",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 6,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "i 𝑥(𝑡)=𝑎_1𝑥_1(𝑡)+𝑎_2𝑥_2(𝑡)",
+                                "raw_itertext": "i 𝑥𝑡=𝑎1𝑥1(𝑡)+𝑎2𝑥2(𝑡)"
+                            },
+                            {
+                                "formula_id": 2,
+                                "slide": 6,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑦(𝑡)=𝑎_1𝑆(𝑥_1(𝑡))+",
+                                "raw_itertext": "𝑦𝑡=𝑎1𝑆𝑥1(𝑡)+"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide6_img10.png"
+                        ]
+                    },
+                    "notions": [
+                        "Systèmes mono-variable multi-variable",
+                        "Multi-variable",
+                        "entrées"
+                    ],
+                    "slide_content": "Systèmes mono-variable et multi-variable\nMono-variable : système à une entrée et une sortie\nMulti-variable : nombre d'entrées + nombre de sorties > 2\nLinéarité\nS[EQ: i 𝑥(𝑡)=𝑎_1𝑥_1(𝑡)+𝑎_2𝑥_2(𝑡)] alors[EQ:  𝑦(𝑡)=𝑎_1𝑆(𝑥_1(𝑡))+] [EQ: 𝑎_2𝑆(𝑥_2(𝑡))]"
+                },
+                {
+                    "slide_id": 7,
+                    "section": "Classification des systèmes",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 7,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥(𝑡)=0",
+                                "raw_itertext": "𝑥𝑡=0"
+                            },
+                            {
+                                "formula_id": 3,
+                                "slide": 7,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "y(𝑡)=𝑆(𝑥(𝑡))=0",
+                                "raw_itertext": "y𝑡=𝑆𝑥(𝑡)=0"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide7_img11.png"
+                        ]
+                    },
+                    "notions": [
+                        "excitation",
+                        "Causalité",
+                        "système"
+                    ],
+                    "slide_content": "Causalité\nLa réponse du système ne peut pas se produire avant l'excitation qui l'engendre\nSi [EQ: 𝑥(𝑡)=0] pour  [EQ: 𝑡<0]   alors     [EQ: y(𝑡)=𝑆(𝑥(𝑡))=0  ] pour [EQ: 𝑡<0]"
+                },
+                {
+                    "slide_id": 8,
+                    "section": "Classification des systèmes",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 8,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "y(𝑡)=𝑆(𝑥(𝑡))",
+                                "raw_itertext": "y𝑡=𝑆𝑥(𝑡)"
+                            },
+                            {
+                                "formula_id": 2,
+                                "slide": 8,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "y(𝑡−𝑡_0)=𝑆(𝑥(𝑡−𝑡_0))",
+                                "raw_itertext": "y𝑡−𝑡0=𝑆𝑥(𝑡−𝑡0)"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide8_img12.png"
+                        ]
+                    },
+                    "notions": [
+                        "Invariance temporelle",
+                        "décalage",
+                        "entrée"
+                    ],
+                    "slide_content": "Invariance temporelle\nUn décalage temporel en entrée induit le même décalage en sortie.\nLa réponse du système est invariante par translation dans le temps.\nSi [EQ: y(𝑡)=𝑆(𝑥(𝑡)) ]    alors     [EQ: y(𝑡−𝑡_0)=𝑆(𝑥(𝑡−𝑡_0))]"
+                },
+                {
+                    "slide_id": 9,
+                    "section": "Classification des systèmes",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 9,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "∃(  𝑀𝑥/  𝑥(𝑡)<𝑀𝑥  ⇒∃   𝑀𝑦  y𝑡=𝑆𝑥(𝑡)<𝑀𝑦  )",
+                                "raw_itertext": "∃  𝑀𝑥  𝑥(𝑡)<𝑀𝑥  ⇒∃   𝑀𝑦  y𝑡=𝑆𝑥(𝑡)<𝑀𝑦"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide9_img13.png"
+                        ]
+                    },
+                    "notions": [
+                        "Stabilité",
+                        "perturbé",
+                        "système"
+                    ],
+                    "slide_content": "Stabilité\nUn système est dit stable si en réponse à une entrée bornée, sa sortie est bornée.\nSystème qui, perturbé, revient à son état initial après disparition de la perturbation"
+                },
+                {
+                    "slide_id": 10,
+                    "section": "Exemples",
+                    "categories": {
+                        "exemple": [
+                            "Exemple de système"
+                        ]
+                    },
+                    "notions": [
+                        "Tachymètre",
+                        "linéaire",
+                        "heure"
+                    ],
+                    "slide_content": "Tachymètre\nEntrée : Vitesse d'un véhicule v(t)\nSortie : Position angulaire de l'aiguille  θ (t)\nPropriétés : linéaire, causal, invariant\nExemple de système\nnon invariant :  y(t) = t.x(t); parcmètre (le tarif dépend de l'heure)\nDans la suite, on étudiera les systèmes mono-variables continus linéaires à temps invariant (systèmes LTI)"
+                },
+                {
+                    "slide_id": 11,
+                    "section": "Les systèmes Linéaires Invariants Temporellement SLIT",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide11_img14.png",
+                            "../data/extracted_images\\chapitre2\\slide11_img15.png"
+                        ]
+                    },
+                    "notions": [
+                        "Linéarité"
+                    ],
+                    "slide_content": "Linéarité"
+                },
+                {
+                    "slide_id": 12,
+                    "section": "Les systèmes Linéaires Invariants Temporellement SLIT",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide12_img16.png",
+                            "../data/extracted_images\\chapitre2\\slide12_img17.png",
+                            "../data/extracted_images\\chapitre2\\slide12_img18.png",
+                            "../data/extracted_images\\chapitre2\\slide12_img19.png"
+                        ]
+                    },
+                    "notions": [
+                        "Linéarité"
+                    ],
+                    "slide_content": "Linéarité"
+                },
+                {
+                    "slide_id": 13,
+                    "section": "Les systèmes Linéaires Invariants Temporellement SLIT",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide13_img20.png",
+                            "../data/extracted_images\\chapitre2\\slide13_img21.png",
+                            "../data/extracted_images\\chapitre2\\slide13_img22.png",
+                            "../data/extracted_images\\chapitre2\\slide13_img23.png"
+                        ]
+                    },
+                    "notions": [
+                        "Linéarité"
+                    ],
+                    "slide_content": "Linéarité"
+                },
+                {
+                    "slide_id": 14,
+                    "section": "Les systèmes Linéaires Invariants Temporellement SLIT",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide14_img24.png",
+                            "../data/extracted_images\\chapitre2\\slide14_img25.png"
+                        ]
+                    },
+                    "notions": [
+                        "Invariance temporelle"
+                    ],
+                    "slide_content": "Invariance temporelle"
+                },
+                {
+                    "slide_id": 15,
+                    "section": "Les systèmes Linéaires Invariants Temporellement SLIT",
+                    "categories": {
+                        "exemple": [
+                            "Exemple de système variant temporellement"
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide15_img26.png",
+                            "../data/extracted_images\\chapitre2\\slide15_img27.png"
+                        ]
+                    },
+                    "notions": [
+                        "Exemple",
+                        "système"
+                    ],
+                    "slide_content": "Exemple de système variant temporellement"
+                },
+                {
+                    "slide_id": 16,
+                    "section": "Les systèmes Linéaires Invariants Temporellement SLIT",
+                    "categories": {
+                        "exemple": [
+                            "Exemple de système variant temporellement"
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide16_img28.png",
+                            "../data/extracted_images\\chapitre2\\slide16_img29.png"
+                        ]
+                    },
+                    "notions": [
+                        "Exemple",
+                        "système"
+                    ],
+                    "slide_content": "Exemple de système variant temporellement"
+                },
+                {
+                    "slide_id": 17,
+                    "section": "Caractérisation d’un système LTI",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide17_img30.png",
+                            "../data/extracted_images\\chapitre2\\slide17_img31.png"
+                        ]
+                    },
+                    "notions": [
+                        "équation différentielle",
+                        "Relation entrée",
+                        "coefficients constants"
+                    ],
+                    "slide_content": "Relation entrée/sortie\nLa plus courante: équation différentielle linéaire à coefficients constants\nAvec\nCaractérisation complète du système par la connaissance des coefficients (ai) et (bi)\nSortie y(t) calculable par la connaissance de x(t)"
+                },
+                {
+                    "slide_id": 18,
+                    "section": "Caractérisation d’un système LTI",
+                    "categories": {
+                        "exemple": [
+                            "Exemple:"
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide18_img32.png",
+                            "../data/extracted_images\\chapitre2\\slide18_img33.png",
+                            "../data/extracted_images\\chapitre2\\slide18_img34.png",
+                            "../data/extracted_images\\chapitre2\\slide18_img35.png"
+                        ]
+                    },
+                    "notions": [
+                        "équation différentielle",
+                        "coefficients constants Exemple",
+                        "Relation entrée"
+                    ],
+                    "slide_content": "Relation entrée/sortie\nLa plus courante: équation différentielle linéaire à coefficients constants\nAvec\nExemple:"
+                },
+                {
+                    "slide_id": 19,
+                    "section": "Caractérisation d’un système LTI",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide19_img36.png"
+                        ]
+                    },
+                    "notions": [
+                        "Réponse impulsionnelle",
+                        "entrée",
+                        "Dirac"
+                    ],
+                    "slide_content": "Réponse impulsionnelle\nLa réponse impulsionnelle h(t) d'un système S est sa réponse à une entrée sous forme d‘une impulsion de Dirac"
+                },
+                {
+                    "slide_id": 20,
+                    "section": "Caractérisation d’un système LTI",
+                    "categories": {},
+                    "notions": [
+                        "Réponse impulsionnelle",
+                        "entrée",
+                        "système"
+                    ],
+                    "slide_content": "Réponse impulsionnelle\nLa réponse impulsionnelle h(t) d'un système S est sa réponse à une entrée sous forme d‘une impulsion de Dirac\nAvantages de la réponse impulsionnelle\ncaractérisation complète du système\npermet de calculer la sortie du système LTI pour d’autres signaux\nd’entrée"
+                },
+                {
+                    "slide_id": 21,
+                    "section": "Caractérisation d’un système LTI",
+                    "categories": {},
+                    "notions": [
+                        "convolution",
+                        "entrée",
+                        "système"
+                    ],
+                    "slide_content": "Comment calculer la sortie du système LTI pour un signal d’entrée quelconque à partir de la réponse impulsionnelle ?\n⇒ notion de convolution"
+                },
+                {
+                    "slide_id": 22,
+                    "section": "Produit de convolution",
+                    "categories": {
+                        "definition": [
+                            "On appelle   Produit de convolution  de deux signaux [EQ: 𝑥(𝑡)] et [EQ: 𝑦(𝑡)], et on note [EQ:    𝑥(𝑡)∗𝑦(𝑡)] l’expression:"
+                        ],
+                        "formule": [
+                            {
+                                "formula_id": 4,
+                                "slide": 22,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑧(𝑡)=𝑥(𝑡)∗𝑦(𝑡)=−∞+∞𝑥(𝜏)  𝑦(𝑡−𝜏)𝑑𝜏",
+                                "raw_itertext": "𝑧𝑡=𝑥𝑡∗𝑦𝑡=−∞+∞𝑥𝜏  𝑦𝑡−𝜏𝑑𝜏"
+                            },
+                            {
+                                "formula_id": 5,
+                                "slide": 22,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥(𝑡)=0,  𝑦(𝑡)=0 pour 𝑡 <0",
+                                "raw_itertext": "𝑥𝑡=0,  𝑦𝑡=0 pour 𝑡 <0"
+                            },
+                            {
+                                "formula_id": 6,
+                                "slide": 22,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑧(𝑡)=𝑥(𝑡)∗𝑦(𝑡)=0+∞𝑥(𝜏)  𝑦(𝑡−𝜏)𝑑𝜏",
+                                "raw_itertext": "𝑧𝑡=𝑥𝑡∗𝑦𝑡=0+∞𝑥𝜏  𝑦𝑡−𝜏𝑑𝜏"
+                            }
+                        ],
+                        "remarque": [
+                            "On appelle   Produit de convolution  de deux signaux [EQ: 𝑥(𝑡)] et [EQ: 𝑦(𝑡)], et on note [EQ:    𝑥(𝑡)∗𝑦(𝑡)] l’expression:"
+                        ]
+                    },
+                    "notions": [
+                        "convolution",
+                        "signaux",
+                        "signaux causaux"
+                    ],
+                    "slide_content": "On appelle   Produit de convolution  de deux signaux [EQ: 𝑥(𝑡)] et [EQ: 𝑦(𝑡)], et on note [EQ:    𝑥(𝑡)∗𝑦(𝑡)] l’expression:\nCas de signaux causaux:  [EQ: 𝑥(𝑡)=0,  𝑦(𝑡)=0 pour 𝑡 <0]"
+                },
+                {
+                    "slide_id": 23,
+                    "section": "Produit de convolution : interprétation",
+                    "categories": {
+                        "exemple": [
+                            "Illustration: https://vincmazet.github.io/spetsi/conv1c.html"
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide23_img37.png",
+                            "../data/extracted_images\\chapitre2\\slide23_img38.png",
+                            "../data/extracted_images\\chapitre2\\slide23_img39.png",
+                            "../data/extracted_images\\chapitre2\\slide23_img40.png"
+                        ]
+                    },
+                    "notions": [
+                        "convolution",
+                        "retournement",
+                        "intégration"
+                    ],
+                    "slide_content": "La convolution de [EQ: 𝑥(𝑡)] par [EQ: 𝑦(𝑡)] peut se décomposer en :\nUn retournement:\nUne translation de +t:\nUne multiplication:\nUne intégration:\nIllustration: https://vincmazet.github.io/spetsi/conv1c.html"
+                },
+                {
+                    "slide_id": 24,
+                    "section": "Produit de convolution : interprétation graphique",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide24_img41.png"
+                        ]
+                    },
+                    "notions": [],
+                    "slide_content": ""
+                },
+                {
+                    "slide_id": 25,
+                    "section": "Produit de convolution : Exemple",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide25_img42.png",
+                            "../data/extracted_images\\chapitre2\\slide25_img43.png"
+                        ]
+                    },
+                    "notions": [
+                        "convolution",
+                        "signaux",
+                        "produit"
+                    ],
+                    "slide_content": "Calculer le produit de convolution des signaux suivants:"
+                },
+                {
+                    "slide_id": 26,
+                    "section": "Produit de convolution : Exemple",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide26_img44.png",
+                            "../data/extracted_images\\chapitre2\\slide26_img45.png"
+                        ]
+                    },
+                    "notions": [],
+                    "slide_content": ""
+                },
+                {
+                    "slide_id": 27,
+                    "section": "Produit de convolution :  Propriétés",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 27,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥(𝑡)∗𝑦(𝑡)=𝑦(𝑡)∗𝑥(𝑡)",
+                                "raw_itertext": "𝑥𝑡∗𝑦𝑡=𝑦𝑡∗𝑥(𝑡)"
+                            },
+                            {
+                                "formula_id": 2,
+                                "slide": 27,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥(𝑡)∗𝑦(𝑡)∗𝑧(𝑡)=𝑥(𝑡)∗(𝑦(𝑡)∗𝑧(𝑡))=[𝑥(𝑡)∗𝑦(𝑡)]∗𝑧(𝑡)",
+                                "raw_itertext": "𝑥𝑡∗𝑦𝑡∗𝑧𝑡=𝑥𝑡∗𝑦𝑡∗𝑧𝑡=[𝑥𝑡∗𝑦𝑡]∗𝑧𝑡"
+                            },
+                            {
+                                "formula_id": 3,
+                                "slide": 27,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥(𝑡)∗(𝑦(𝑡)+𝑧(𝑡))=𝑥(𝑡)∗𝑦(𝑡)+𝑥(𝑡)∗𝑧(𝑡)",
+                                "raw_itertext": "𝑥𝑡∗𝑦𝑡+𝑧𝑡=𝑥𝑡∗𝑦𝑡+𝑥𝑡∗𝑧(𝑡)"
+                            },
+                            {
+                                "formula_id": 4,
+                                "slide": 27,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥(𝑡)∗𝛿(𝑡)=𝑥(𝑡)",
+                                "raw_itertext": "𝑥𝑡∗𝛿𝑡=𝑥𝑡"
+                            },
+                            {
+                                "formula_id": 5,
+                                "slide": 27,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥(𝑡)∗𝛿(𝑡−𝑡_0)=𝑥(𝑡−𝑡_0)",
+                                "raw_itertext": "𝑥𝑡∗𝛿𝑡−𝑡0=𝑥𝑡−𝑡0"
+                            }
+                        ]
+                    },
+                    "notions": [
+                        "Distributivité",
+                        "Commutativité",
+                        "Associativité"
+                    ],
+                    "slide_content": "Commutativité :\nAssociativité :\n[EQ: 𝑥(𝑡)∗𝑦(𝑡)∗𝑧(𝑡)=𝑥(𝑡)∗(𝑦(𝑡)∗𝑧(𝑡))=[𝑥(𝑡)∗𝑦(𝑡)]∗𝑧(𝑡)]\nDistributivité par rapport à l’addition :\nElément neutre du produit de convolution: impulsion de Dirac\n[EQ: 𝑥(𝑡)∗𝛿(𝑡)=𝑥(𝑡)]\nTranslation temporelle (convolution avec un Dirac retardé )"
+                },
+                {
+                    "slide_id": 28,
+                    "section": "Produit de convolution :  Propriétés",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 28,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "Ш_𝑇(𝑡)=𝑘=−∞+∞𝛿(𝑡−𝑘𝑇)",
+                                "raw_itertext": "Ш𝑇𝑡=𝑘=−∞+∞𝛿(𝑡−𝑘𝑇)"
+                            },
+                            {
+                                "formula_id": 3,
+                                "slide": 28,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "Ш_𝑇(𝑡)=",
+                                "raw_itertext": "Ш𝑇𝑡="
+                            },
+                            {
+                                "formula_id": 4,
+                                "slide": 28,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑘=−∞+∞𝑓(𝑡)∗𝛿(𝑡−𝑘𝑇)",
+                                "raw_itertext": "𝑘=−∞+∞𝑓(𝑡)∗𝛿(𝑡−𝑘𝑇)"
+                            },
+                            {
+                                "formula_id": 6,
+                                "slide": 28,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑓(𝑡)∗ Ш_𝑇(𝑡)= 𝑘=−∞+∞𝑓(𝑡−𝑘𝑇)",
+                                "raw_itertext": "𝑓(𝑡)∗ Ш𝑇𝑡= 𝑘=−∞+∞𝑓(𝑡−𝑘𝑇)"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide28_img46.png"
+                        ]
+                    },
+                    "notions": [
+                        "Dirarc",
+                        "Dirac",
+                        "fonction périodique"
+                    ],
+                    "slide_content": "Convolution avec un peigne de Dirac:\nPeigne de Dirarc:           [EQ: Ш_𝑇(𝑡)=𝑘=−∞+∞𝛿(𝑡−𝑘𝑇)]\n[EQ: 𝑓(𝑡)∗] [EQ: Ш_𝑇(𝑡)=] [EQ: 𝑘=−∞+∞𝑓(𝑡)∗𝛿(𝑡−𝑘𝑇)]  (Linéarité de la convolution: on sort la somme)\n[EQ: ⟹]        [EQ: 𝑓(𝑡)∗ Ш_𝑇(𝑡)= 𝑘=−∞+∞𝑓(𝑡−𝑘𝑇)]  (Convolution avec un Dirac retardé)\n[EQ: ⟹ ]On obtient une fonction périodique formée d’une recopie de [EQ: 𝑓 ]autour de\nchaque dent."
+                },
+                {
+                    "slide_id": 29,
+                    "section": "Réponse d’un système LTI à une entrée quelconque",
+                    "categories": {
+                        "exemple": [
+                            "Application de la notion de convolution"
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide29_img47.png",
+                            "../data/extracted_images\\chapitre2\\slide29_img48.png"
+                        ]
+                    },
+                    "notions": [
+                        "convolution",
+                        "Application",
+                        "notion"
+                    ],
+                    "slide_content": "Application de la notion de convolution\n."
+                },
+                {
+                    "slide_id": 30,
+                    "section": "Réponse d’un système LTI à une entrée quelconque",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 30,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑥(𝑡)=𝑥(𝑡)∗𝛿(𝑡)⟹𝑥(𝑡)=−∞+∞𝑥(𝜏)  𝛿(𝑡−𝜏)𝑑𝜏",
+                                "raw_itertext": "𝑥𝑡=𝑥𝑡∗𝛿𝑡⟹𝑥𝑡=−∞+∞𝑥𝜏  𝛿𝑡−𝜏𝑑𝜏"
+                            },
+                            {
+                                "formula_id": 3,
+                                "slide": 30,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑦(𝑡)=𝑆(𝑥(𝑡))",
+                                "raw_itertext": "𝑦𝑡=𝑆𝑥𝑡"
+                            },
+                            {
+                                "formula_id": 4,
+                                "slide": 30,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "⟹𝑦(𝑡)=𝑆(−∞+∞𝑥(𝜏)  𝛿(𝑡−𝜏)𝑑𝜏)",
+                                "raw_itertext": "⟹𝑦𝑡=𝑆−∞+∞𝑥𝜏  𝛿𝑡−𝜏𝑑𝜏"
+                            },
+                            {
+                                "formula_id": 5,
+                                "slide": 30,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑦(𝑡)=−∞+∞𝑥(𝜏)  𝑆[𝛿(𝑡−𝜏)]𝑑𝜏",
+                                "raw_itertext": "𝑦𝑡=−∞+∞𝑥𝜏  𝑆[𝛿𝑡−𝜏]𝑑𝜏"
+                            },
+                            {
+                                "formula_id": 6,
+                                "slide": 30,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑆(𝛿(𝑡))=h(𝑡)",
+                                "raw_itertext": "𝑆𝛿𝑡=h(𝑡)"
+                            },
+                            {
+                                "formula_id": 7,
+                                "slide": 30,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑆(𝛿(𝑡−𝜏))=h(𝑡−𝜏)",
+                                "raw_itertext": "𝑆𝛿𝑡−𝜏=h(𝑡−𝜏)"
+                            }
+                        ],
+                        "exemple": [
+                            "Application de la notion de convolution"
+                        ]
+                    },
+                    "notions": [
+                        "Propriété invariance temporelle système",
+                        "linéarité",
+                        "convolution"
+                    ],
+                    "slide_content": "Application de la notion de convolution\nElément neutre  de la convolution\n[EQ:       𝑥(𝑡)=𝑥(𝑡)∗𝛿(𝑡)⟹𝑥(𝑡)=−∞+∞𝑥(𝜏)  𝛿(𝑡−𝜏)𝑑𝜏]\nCalculer la sortie de [EQ: 𝑥(𝑡):]  [EQ: 𝑦(𝑡)=𝑆(𝑥(𝑡))]\n[EQ:        ⟹𝑦(𝑡)=𝑆(−∞+∞𝑥(𝜏)  𝛿(𝑡−𝜏)𝑑𝜏)]\nPropriété de linéarité du système [EQ:           𝑦(𝑡)=−∞+∞𝑥(𝜏)  𝑆[𝛿(𝑡−𝜏)]𝑑𝜏]\nPropriété d’invariance temporelle du système:\n[EQ: 𝑆(𝛿(𝑡))=h(𝑡)]      [EQ:         𝑆(𝛿(𝑡−𝜏))=h(𝑡−𝜏)]\nRéponse impulsionnelle décalée"
+                },
+                {
+                    "slide_id": 31,
+                    "section": "Réponse d’un système LTI à une entrée quelconque",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 31,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑦(𝑡)=−∞+∞𝑥(𝜏)  h(𝑡−𝜏)𝑑𝜏",
+                                "raw_itertext": "𝑦𝑡=−∞+∞𝑥𝜏  h𝑡−𝜏𝑑𝜏"
+                            },
+                            {
+                                "formula_id": 3,
+                                "slide": 31,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "𝑦(𝑡)=𝑥(𝑡)∗h(𝑡)",
+                                "raw_itertext": "𝑦𝑡=𝑥(𝑡)∗h(𝑡)"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide31_img49.png"
+                        ]
+                    },
+                    "notions": [
+                        "réponse impulsionnelle",
+                        "entrée",
+                        "réponse"
+                    ],
+                    "slide_content": "La réponse du système LTI à une entrée quelconque x est la convolution de x avec la réponse impulsionnelle h du système.\n⇒ La réponse impulsionnelle h caractérise entièrement le système.\nOn en déduit [EQ:           𝑦(𝑡)=−∞+∞𝑥(𝜏)  h(𝑡−𝜏)𝑑𝜏      ]\n[EQ:  ⟹]                          [EQ: 𝑦(𝑡)=𝑥(𝑡)∗h(𝑡)]"
+                },
+                {
+                    "slide_id": 32,
+                    "section": "Stabilité et réponse impulsionnelle",
+                    "categories": {
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide32_img50.png"
+                        ]
+                    },
+                    "notions": [
+                        "réponse impulsionnelle",
+                        "entrée",
+                        "système"
+                    ],
+                    "slide_content": "un système est stable si sa sortie est bornée lorsque son entrée est bornée\nQuelle est la condition sur [EQ: h(𝑡) ]pour que [EQ: 𝑦(𝑡) ]soit bornée ?\n⇒ Un système est stable ssi sa réponse impulsionnelle est absolument\nintégrable:"
+                },
+                {
+                    "slide_id": 33,
+                    "section": "Causalité et réponse impulsionnelle",
+                    "categories": {
+                        "formule": [
+                            {
+                                "formula_id": 1,
+                                "slide": 33,
+                                "shape_name": "AlternateContent",
+                                "type": "OMML",
+                                "extractable": true,
+                                "text": "h(𝑡)=𝑂 ,      ∀ 𝑡<𝑂",
+                                "raw_itertext": "h𝑡=𝑂 ,      ∀ 𝑡<𝑂"
+                            }
+                        ],
+                        "image": [
+                            "../data/extracted_images\\chapitre2\\slide33_img51.png",
+                            "../data/extracted_images\\chapitre2\\slide33_img52.png"
+                        ]
+                    },
+                    "notions": [
+                        "système SLIT",
+                        "réponse impulsionnelle"
+                    ],
+                    "slide_content": "Un système SLIT est causal si sa réponse impulsionnelle est nulle pour t < 0 :"
+                }
+            ]
+        }
+    ]
+}
