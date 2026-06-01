@@ -1,13 +1,16 @@
 
 # Assistant Pédagogique - Projet Complet
 
-> Plateforme d'assistant pédagogique intelligent pour le module Traitement du Signal - Solution fullstack avec backend Spring Boot et frontend Angular et Python FASTAPI pour l'assistant.
+> Plateforme d'assistant pédagogique intelligent pour le module **Traitement du Signal** – Solution fullstack avec backend Spring Boot, frontend Angular et **module IA en Python/FastAPI**.
 
 [![Java](https://img.shields.io/badge/Java-17-blue.svg)](https://openjdk.org/projects/jdk/17/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.0.5-green.svg)](https://spring.io/projects/spring-boot)
 [![Angular](https://img.shields.io/badge/Angular-17-red.svg)](https://angular.io/)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0-orange.svg)](https://www.mysql.com/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4.svg)](https://tailwindcss.com/)
+[![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115-green.svg)](https://fastapi.tiangolo.com/)
+[![Ollama](https://img.shields.io/badge/Ollama-0.6-orange.svg)](https://ollama.com/)
 
 ---
 
