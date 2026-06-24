@@ -52,7 +52,7 @@ projet/
 │   └── README.md               # Documentation détaillée du backend
 ├── assistant-pedagogique-ui/   # Frontend Angular
 │   └── README.md               # Documentation détaillée du frontend
-├── assistant-pedagogique-ia/   # Module IA
+├── assistant-pedagogique-ai/   # Module IA
 │   └── README.md               # Documentation détaillée du module IA
 └── README.md                   # Ce fichier (vue d'ensemble)
 ```
